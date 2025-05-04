@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"bytes"
-	"fmt"
 	"log"
 	"os"
 
@@ -32,5 +31,15 @@ func main() {
 	md := listener.NewMarkdownListener(writer)
 	antlr.ParseTreeWalkerDefault.Walk(md, tree)
 	writer.Flush()
-	fmt.Print(buffer.String())
+
+	err = os.Mkdir("output", 0755)
+	if err != nil {
+		log.Panic(err)
+	}
+	f, err := os.Create("./output/index.html")
+	if err != nil {
+		log.Panic(err)
+	}
+	f.Write(buffer.Bytes())
+	f.Sync()
 }

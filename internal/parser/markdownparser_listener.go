@@ -13,6 +13,33 @@ type MarkdownParserListener interface {
 	// EnterBlock is called when entering the block production.
 	EnterBlock(c *BlockContext)
 
+	// EnterLine is called when entering the line production.
+	EnterLine(c *LineContext)
+
+	// EnterInline is called when entering the inline production.
+	EnterInline(c *InlineContext)
+
+	// EnterItalic is called when entering the italic production.
+	EnterItalic(c *ItalicContext)
+
+	// EnterItalic_line is called when entering the italic_line production.
+	EnterItalic_line(c *Italic_lineContext)
+
+	// EnterBold is called when entering the bold production.
+	EnterBold(c *BoldContext)
+
+	// EnterBold_line is called when entering the bold_line production.
+	EnterBold_line(c *Bold_lineContext)
+
+	// EnterBold_and_italic is called when entering the bold_and_italic production.
+	EnterBold_and_italic(c *Bold_and_italicContext)
+
+	// EnterCode is called when entering the code production.
+	EnterCode(c *CodeContext)
+
+	// EnterCode_text is called when entering the code_text production.
+	EnterCode_text(c *Code_textContext)
+
 	// EnterH1 is called when entering the h1 production.
 	EnterH1(c *H1Context)
 
@@ -31,71 +58,44 @@ type MarkdownParserListener interface {
 	// EnterH6 is called when entering the h6 production.
 	EnterH6(c *H6Context)
 
-	// EnterHeading is called when entering the heading production.
-	EnterHeading(c *HeadingContext)
-
 	// EnterParagraph is called when entering the paragraph production.
 	EnterParagraph(c *ParagraphContext)
 
-	// EnterBlockquote is called when entering the blockquote production.
-	EnterBlockquote(c *BlockquoteContext)
-
-	// EnterUnorderedList is called when entering the unorderedList production.
-	EnterUnorderedList(c *UnorderedListContext)
-
-	// EnterOrderedList is called when entering the orderedList production.
-	EnterOrderedList(c *OrderedListContext)
-
-	// EnterListItem is called when entering the listItem production.
-	EnterListItem(c *ListItemContext)
-
-	// EnterOrderedListItem is called when entering the orderedListItem production.
-	EnterOrderedListItem(c *OrderedListItemContext)
-
-	// EnterCodeBlock is called when entering the codeBlock production.
-	EnterCodeBlock(c *CodeBlockContext)
-
-	// EnterHorizontalRule is called when entering the horizontalRule production.
-	EnterHorizontalRule(c *HorizontalRuleContext)
-
-	// EnterLine is called when entering the line production.
-	EnterLine(c *LineContext)
-
-	// EnterInlineElement is called when entering the inlineElement production.
-	EnterInlineElement(c *InlineElementContext)
-
-	// EnterBold is called when entering the bold production.
-	EnterBold(c *BoldContext)
-
-	// EnterBoldAndItalic is called when entering the boldAndItalic production.
-	EnterBoldAndItalic(c *BoldAndItalicContext)
-
-	// EnterBoldText is called when entering the boldText production.
-	EnterBoldText(c *BoldTextContext)
-
-	// EnterItalic is called when entering the italic production.
-	EnterItalic(c *ItalicContext)
-
-	// EnterItalicText is called when entering the italicText production.
-	EnterItalicText(c *ItalicTextContext)
-
-	// EnterStrikethrough is called when entering the strikethrough production.
-	EnterStrikethrough(c *StrikethroughContext)
-
-	// EnterStrikethroughText is called when entering the strikethroughText production.
-	EnterStrikethroughText(c *StrikethroughTextContext)
-
-	// EnterCode is called when entering the code production.
-	EnterCode(c *CodeContext)
-
-	// EnterCodeText is called when entering the codeText production.
-	EnterCodeText(c *CodeTextContext)
+	// EnterHeading is called when entering the heading production.
+	EnterHeading(c *HeadingContext)
 
 	// ExitDocument is called when exiting the document production.
 	ExitDocument(c *DocumentContext)
 
 	// ExitBlock is called when exiting the block production.
 	ExitBlock(c *BlockContext)
+
+	// ExitLine is called when exiting the line production.
+	ExitLine(c *LineContext)
+
+	// ExitInline is called when exiting the inline production.
+	ExitInline(c *InlineContext)
+
+	// ExitItalic is called when exiting the italic production.
+	ExitItalic(c *ItalicContext)
+
+	// ExitItalic_line is called when exiting the italic_line production.
+	ExitItalic_line(c *Italic_lineContext)
+
+	// ExitBold is called when exiting the bold production.
+	ExitBold(c *BoldContext)
+
+	// ExitBold_line is called when exiting the bold_line production.
+	ExitBold_line(c *Bold_lineContext)
+
+	// ExitBold_and_italic is called when exiting the bold_and_italic production.
+	ExitBold_and_italic(c *Bold_and_italicContext)
+
+	// ExitCode is called when exiting the code production.
+	ExitCode(c *CodeContext)
+
+	// ExitCode_text is called when exiting the code_text production.
+	ExitCode_text(c *Code_textContext)
 
 	// ExitH1 is called when exiting the h1 production.
 	ExitH1(c *H1Context)
@@ -115,63 +115,9 @@ type MarkdownParserListener interface {
 	// ExitH6 is called when exiting the h6 production.
 	ExitH6(c *H6Context)
 
-	// ExitHeading is called when exiting the heading production.
-	ExitHeading(c *HeadingContext)
-
 	// ExitParagraph is called when exiting the paragraph production.
 	ExitParagraph(c *ParagraphContext)
 
-	// ExitBlockquote is called when exiting the blockquote production.
-	ExitBlockquote(c *BlockquoteContext)
-
-	// ExitUnorderedList is called when exiting the unorderedList production.
-	ExitUnorderedList(c *UnorderedListContext)
-
-	// ExitOrderedList is called when exiting the orderedList production.
-	ExitOrderedList(c *OrderedListContext)
-
-	// ExitListItem is called when exiting the listItem production.
-	ExitListItem(c *ListItemContext)
-
-	// ExitOrderedListItem is called when exiting the orderedListItem production.
-	ExitOrderedListItem(c *OrderedListItemContext)
-
-	// ExitCodeBlock is called when exiting the codeBlock production.
-	ExitCodeBlock(c *CodeBlockContext)
-
-	// ExitHorizontalRule is called when exiting the horizontalRule production.
-	ExitHorizontalRule(c *HorizontalRuleContext)
-
-	// ExitLine is called when exiting the line production.
-	ExitLine(c *LineContext)
-
-	// ExitInlineElement is called when exiting the inlineElement production.
-	ExitInlineElement(c *InlineElementContext)
-
-	// ExitBold is called when exiting the bold production.
-	ExitBold(c *BoldContext)
-
-	// ExitBoldAndItalic is called when exiting the boldAndItalic production.
-	ExitBoldAndItalic(c *BoldAndItalicContext)
-
-	// ExitBoldText is called when exiting the boldText production.
-	ExitBoldText(c *BoldTextContext)
-
-	// ExitItalic is called when exiting the italic production.
-	ExitItalic(c *ItalicContext)
-
-	// ExitItalicText is called when exiting the italicText production.
-	ExitItalicText(c *ItalicTextContext)
-
-	// ExitStrikethrough is called when exiting the strikethrough production.
-	ExitStrikethrough(c *StrikethroughContext)
-
-	// ExitStrikethroughText is called when exiting the strikethroughText production.
-	ExitStrikethroughText(c *StrikethroughTextContext)
-
-	// ExitCode is called when exiting the code production.
-	ExitCode(c *CodeContext)
-
-	// ExitCodeText is called when exiting the codeText production.
-	ExitCodeText(c *CodeTextContext)
+	// ExitHeading is called when exiting the heading production.
+	ExitHeading(c *HeadingContext)
 }

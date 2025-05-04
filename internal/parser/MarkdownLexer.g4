@@ -1,39 +1,24 @@
 lexer grammar MarkdownLexer;
 
-// Basic characters
-WHITESPACE : [ \t]+ ;
-NEWLINE : '\r'? '\n' ;
+WHITESPACE: [ \t]+ ;
+NEWLINE: '\r'? '\n' ;
 ESCAPE_CHAR : '\\' . ;
 
-// Formatting markers
-BOLD_MARKER : '**' | '__' ;
-ITALIC_MARKER : '*' | '_' ;
-STRIKETHROUGH_MARKER : '~~';
-BOLD_AND_ITALIC_MARKER: '***' | '___';  
-CODE_MARKER : '`' ;
+// headings
+HASH: '#';
+H2: HASH HASH;
+H3: HASH HASH HASH; 
+H4: HASH HASH HASH HASH;
+H5: HASH HASH HASH HASH HASH;
+H6: HASH HASH HASH HASH HASH HASH;
 
-// Block markers
-BLOCKQUOTE_MARKER : '>' WHITESPACE? ;
-UNORDERED_LIST_MARKER : ('-' | '*' | '+') WHITESPACE ;
-ORDERED_LIST_MARKER : [0-9]+ '.' WHITESPACE ;
-HORIZONTAL_RULE : ('---' | '___' | '***') NEWLINE ;
+// inlines
+BOLD_AND_ITALIC_MARKER: '***';
+ITALIC_MARKER: '*';
+BOLD_MARKER: '**';
+CODE_MARKER: '`';
 
-// Code blocks
-FENCED_CODE_BLOCK
-    : '```' .*? '```'
-    | '~~~' .*? '~~~'
-    ;
-INDENTED_CODE_BLOCK : WHITESPACE WHITESPACE WHITESPACE WHITESPACE .*? NEWLINE ;
+PUNCTUATION: [.,!?;:(){}'"] | '[' | ']' ;
+NUMBER: [0-9]+ ;
 
-// Structure characters
-HASH : '#' ;  // Used for headings
-LBRACKET : '[' ;
-RBRACKET : ']' ;
-LPAREN : '(' ;
-RPAREN : ')' ;
-EXCLAMATION : '!' ;
-
-// Text content (catch-all for normal text)
-// TEXT : ~[ \t\r\n*_`\\[\]()#>~!/:.?=&%+\-]+ ;
-TEXT : ~[ \r\n\\`*_#[\]()!>]+ ;
-
+WORD : ~[\r\n#* \t]+;
