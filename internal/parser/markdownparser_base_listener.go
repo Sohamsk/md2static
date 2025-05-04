@@ -32,6 +32,42 @@ func (s *BaseMarkdownParserListener) EnterBlock(ctx *BlockContext) {}
 // ExitBlock is called when production block is exited.
 func (s *BaseMarkdownParserListener) ExitBlock(ctx *BlockContext) {}
 
+// EnterH1 is called when production h1 is entered.
+func (s *BaseMarkdownParserListener) EnterH1(ctx *H1Context) {}
+
+// ExitH1 is called when production h1 is exited.
+func (s *BaseMarkdownParserListener) ExitH1(ctx *H1Context) {}
+
+// EnterH2 is called when production h2 is entered.
+func (s *BaseMarkdownParserListener) EnterH2(ctx *H2Context) {}
+
+// ExitH2 is called when production h2 is exited.
+func (s *BaseMarkdownParserListener) ExitH2(ctx *H2Context) {}
+
+// EnterH3 is called when production h3 is entered.
+func (s *BaseMarkdownParserListener) EnterH3(ctx *H3Context) {}
+
+// ExitH3 is called when production h3 is exited.
+func (s *BaseMarkdownParserListener) ExitH3(ctx *H3Context) {}
+
+// EnterH4 is called when production h4 is entered.
+func (s *BaseMarkdownParserListener) EnterH4(ctx *H4Context) {}
+
+// ExitH4 is called when production h4 is exited.
+func (s *BaseMarkdownParserListener) ExitH4(ctx *H4Context) {}
+
+// EnterH5 is called when production h5 is entered.
+func (s *BaseMarkdownParserListener) EnterH5(ctx *H5Context) {}
+
+// ExitH5 is called when production h5 is exited.
+func (s *BaseMarkdownParserListener) ExitH5(ctx *H5Context) {}
+
+// EnterH6 is called when production h6 is entered.
+func (s *BaseMarkdownParserListener) EnterH6(ctx *H6Context) {}
+
+// ExitH6 is called when production h6 is exited.
+func (s *BaseMarkdownParserListener) ExitH6(ctx *H6Context) {}
+
 // EnterHeading is called when production heading is entered.
 func (s *BaseMarkdownParserListener) EnterHeading(ctx *HeadingContext) {}
 

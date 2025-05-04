@@ -20,8 +20,37 @@ block
     | horizontalRule
     ;
 
+h1
+    : HASH WHITESPACE data=line NEWLINE*
+    ;
+
+h2
+    : HASH HASH WHITESPACE data=line NEWLINE*
+    ;
+
+h3
+    : HASH HASH HASH WHITESPACE data=line NEWLINE*
+    ;
+
+h4
+    : HASH HASH HASH HASH WHITESPACE data=line NEWLINE*
+    ;
+
+h5
+    : HASH HASH HASH HASH HASH WHITESPACE data=line NEWLINE*
+    ;
+
+h6
+    : HASH HASH HASH HASH HASH HASH WHITESPACE data=line NEWLINE*
+    ;
+
 heading
-    : HASH+ WHITESPACE line NEWLINE*
+    : h1
+    | h2
+    | h3
+    | h4
+    | h5
+    | h6
     ;
 
 paragraph
@@ -70,11 +99,11 @@ inlineElement
     ;
 
 bold
-    : BOLD_MARKER text=boldText BOLD_MARKER
+    : BOLD_MARKER data=boldText BOLD_MARKER
     ;
     
 boldAndItalic
-    : BOLD_AND_ITALIC_MARKER text=italicText BOLD_AND_ITALIC_MARKER
+    : BOLD_AND_ITALIC_MARKER data=italicText BOLD_AND_ITALIC_MARKER
     ;
 
 boldText
@@ -82,7 +111,7 @@ boldText
     ;
 
 italic
-    : ITALIC_MARKER text=italicText ITALIC_MARKER
+    : ITALIC_MARKER data=italicText ITALIC_MARKER
     ;
 
 italicText
@@ -90,7 +119,7 @@ italicText
     ;
 
 strikethrough
-    : STRIKETHROUGH_MARKER text=strikethroughText STRIKETHROUGH_MARKER
+    : STRIKETHROUGH_MARKER data=strikethroughText STRIKETHROUGH_MARKER
     ;
 
 strikethroughText
@@ -98,9 +127,10 @@ strikethroughText
     ;
 
 code
-    : CODE_MARKER text=codeText CODE_MARKER
+    : CODE_MARKER data=codeText CODE_MARKER
     ;
 
 codeText
     : (TEXT | WHITESPACE | ESCAPE_CHAR)+
     ;
+

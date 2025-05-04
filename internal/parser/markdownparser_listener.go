@@ -13,6 +13,24 @@ type MarkdownParserListener interface {
 	// EnterBlock is called when entering the block production.
 	EnterBlock(c *BlockContext)
 
+	// EnterH1 is called when entering the h1 production.
+	EnterH1(c *H1Context)
+
+	// EnterH2 is called when entering the h2 production.
+	EnterH2(c *H2Context)
+
+	// EnterH3 is called when entering the h3 production.
+	EnterH3(c *H3Context)
+
+	// EnterH4 is called when entering the h4 production.
+	EnterH4(c *H4Context)
+
+	// EnterH5 is called when entering the h5 production.
+	EnterH5(c *H5Context)
+
+	// EnterH6 is called when entering the h6 production.
+	EnterH6(c *H6Context)
+
 	// EnterHeading is called when entering the heading production.
 	EnterHeading(c *HeadingContext)
 
@@ -78,6 +96,24 @@ type MarkdownParserListener interface {
 
 	// ExitBlock is called when exiting the block production.
 	ExitBlock(c *BlockContext)
+
+	// ExitH1 is called when exiting the h1 production.
+	ExitH1(c *H1Context)
+
+	// ExitH2 is called when exiting the h2 production.
+	ExitH2(c *H2Context)
+
+	// ExitH3 is called when exiting the h3 production.
+	ExitH3(c *H3Context)
+
+	// ExitH4 is called when exiting the h4 production.
+	ExitH4(c *H4Context)
+
+	// ExitH5 is called when exiting the h5 production.
+	ExitH5(c *H5Context)
+
+	// ExitH6 is called when exiting the h6 production.
+	ExitH6(c *H6Context)
 
 	// ExitHeading is called when exiting the heading production.
 	ExitHeading(c *HeadingContext)
