@@ -19,6 +19,8 @@ func (s *MarkdownListener) EnterParagraph(ctx *parser.ParagraphContext) {
 						content += "<i>" + v.GetData().GetText() + "</i>"
 					case *parser.Bold_and_italicContext:
 						content += "<b><i>" + v.GetData().GetText() + "</i></b>"
+					case *parser.CodeContext:
+						content += "<code>" + v.GetData().GetText() + "</code>"
 					}
 				}
 

@@ -4,5 +4,5 @@
 
 ### Heading 3
 
-This is a paragraph with **bold**, *italic*.
+This is a paragraph with **bold**, *italic* and `code`.
 

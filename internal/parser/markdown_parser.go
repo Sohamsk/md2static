@@ -50,9 +50,9 @@ func markdownparserParserInit() {
 		4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7,
 		10, 2, 11, 7, 11, 2, 12, 7, 12, 2, 13, 7, 13, 2, 14, 7, 14, 2, 15, 7, 15,
 		2, 16, 7, 16, 2, 17, 7, 17, 2, 18, 7, 18, 1, 0, 5, 0, 40, 8, 0, 10, 0,
-		12, 0, 43, 9, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 3, 1, 50, 8, 1, 1, 2, 1,
-		2, 1, 2, 1, 2, 1, 2, 4, 2, 57, 8, 2, 11, 2, 12, 2, 58, 1, 2, 5, 2, 62,
-		8, 2, 10, 2, 12, 2, 65, 9, 2, 1, 3, 1, 3, 1, 3, 3, 3, 70, 8, 3, 1, 4, 1,
+		12, 0, 43, 9, 0, 1, 0, 1, 0, 1, 1, 1, 1, 3, 1, 49, 8, 1, 1, 2, 1, 2, 1,
+		2, 1, 2, 1, 2, 4, 2, 56, 8, 2, 11, 2, 12, 2, 57, 1, 2, 5, 2, 61, 8, 2,
+		10, 2, 12, 2, 64, 9, 2, 1, 3, 1, 3, 1, 3, 1, 3, 3, 3, 70, 8, 3, 1, 4, 1,
 		4, 1, 4, 1, 4, 1, 5, 4, 5, 77, 8, 5, 11, 5, 12, 5, 78, 1, 5, 4, 5, 82,
 		8, 5, 11, 5, 12, 5, 83, 1, 6, 1, 6, 1, 6, 1, 6, 1, 7, 4, 7, 91, 8, 7, 11,
 		7, 12, 7, 92, 1, 7, 4, 7, 96, 8, 7, 11, 7, 12, 7, 97, 1, 8, 1, 8, 1, 8,
@@ -66,24 +66,24 @@ func markdownparserParserInit() {
 		9, 16, 1, 17, 4, 17, 168, 8, 17, 11, 17, 12, 17, 169, 1, 18, 1, 18, 1,
 		18, 1, 18, 1, 18, 1, 18, 3, 18, 178, 8, 18, 1, 18, 0, 0, 19, 0, 2, 4, 6,
 		8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 0, 2, 2, 0,
-		1, 1, 16, 16, 3, 0, 1, 1, 3, 3, 16, 16, 190, 0, 41, 1, 0, 0, 0, 2, 49,
-		1, 0, 0, 0, 4, 56, 1, 0, 0, 0, 6, 69, 1, 0, 0, 0, 8, 71, 1, 0, 0, 0, 10,
+		1, 1, 16, 16, 3, 0, 1, 1, 3, 3, 16, 16, 190, 0, 41, 1, 0, 0, 0, 2, 48,
+		1, 0, 0, 0, 4, 55, 1, 0, 0, 0, 6, 69, 1, 0, 0, 0, 8, 71, 1, 0, 0, 0, 10,
 		81, 1, 0, 0, 0, 12, 85, 1, 0, 0, 0, 14, 95, 1, 0, 0, 0, 16, 99, 1, 0, 0,
 		0, 18, 103, 1, 0, 0, 0, 20, 108, 1, 0, 0, 0, 22, 112, 1, 0, 0, 0, 24, 121,
 		1, 0, 0, 0, 26, 130, 1, 0, 0, 0, 28, 139, 1, 0, 0, 0, 30, 148, 1, 0, 0,
 		0, 32, 157, 1, 0, 0, 0, 34, 167, 1, 0, 0, 0, 36, 177, 1, 0, 0, 0, 38, 40,
 		3, 2, 1, 0, 39, 38, 1, 0, 0, 0, 40, 43, 1, 0, 0, 0, 41, 39, 1, 0, 0, 0,
 		41, 42, 1, 0, 0, 0, 42, 44, 1, 0, 0, 0, 43, 41, 1, 0, 0, 0, 44, 45, 5,
-		0, 0, 1, 45, 1, 1, 0, 0, 0, 46, 50, 3, 36, 18, 0, 47, 50, 3, 34, 17, 0,
-		48, 50, 3, 18, 9, 0, 49, 46, 1, 0, 0, 0, 49, 47, 1, 0, 0, 0, 49, 48, 1,
-		0, 0, 0, 50, 3, 1, 0, 0, 0, 51, 57, 5, 16, 0, 0, 52, 57, 5, 1, 0, 0, 53,
-		57, 5, 15, 0, 0, 54, 57, 5, 14, 0, 0, 55, 57, 3, 6, 3, 0, 56, 51, 1, 0,
-		0, 0, 56, 52, 1, 0, 0, 0, 56, 53, 1, 0, 0, 0, 56, 54, 1, 0, 0, 0, 56, 55,
-		1, 0, 0, 0, 57, 58, 1, 0, 0, 0, 58, 56, 1, 0, 0, 0, 58, 59, 1, 0, 0, 0,
-		59, 63, 1, 0, 0, 0, 60, 62, 5, 2, 0, 0, 61, 60, 1, 0, 0, 0, 62, 65, 1,
-		0, 0, 0, 63, 61, 1, 0, 0, 0, 63, 64, 1, 0, 0, 0, 64, 5, 1, 0, 0, 0, 65,
-		63, 1, 0, 0, 0, 66, 70, 3, 8, 4, 0, 67, 70, 3, 12, 6, 0, 68, 70, 3, 16,
-		8, 0, 69, 66, 1, 0, 0, 0, 69, 67, 1, 0, 0, 0, 69, 68, 1, 0, 0, 0, 70, 7,
+		0, 0, 1, 45, 1, 1, 0, 0, 0, 46, 49, 3, 36, 18, 0, 47, 49, 3, 34, 17, 0,
+		48, 46, 1, 0, 0, 0, 48, 47, 1, 0, 0, 0, 49, 3, 1, 0, 0, 0, 50, 56, 5, 16,
+		0, 0, 51, 56, 5, 1, 0, 0, 52, 56, 5, 15, 0, 0, 53, 56, 5, 14, 0, 0, 54,
+		56, 3, 6, 3, 0, 55, 50, 1, 0, 0, 0, 55, 51, 1, 0, 0, 0, 55, 52, 1, 0, 0,
+		0, 55, 53, 1, 0, 0, 0, 55, 54, 1, 0, 0, 0, 56, 57, 1, 0, 0, 0, 57, 55,
+		1, 0, 0, 0, 57, 58, 1, 0, 0, 0, 58, 62, 1, 0, 0, 0, 59, 61, 5, 2, 0, 0,
+		60, 59, 1, 0, 0, 0, 61, 64, 1, 0, 0, 0, 62, 60, 1, 0, 0, 0, 62, 63, 1,
+		0, 0, 0, 63, 5, 1, 0, 0, 0, 64, 62, 1, 0, 0, 0, 65, 70, 3, 8, 4, 0, 66,
+		70, 3, 12, 6, 0, 67, 70, 3, 16, 8, 0, 68, 70, 3, 18, 9, 0, 69, 65, 1, 0,
+		0, 0, 69, 66, 1, 0, 0, 0, 69, 67, 1, 0, 0, 0, 69, 68, 1, 0, 0, 0, 70, 7,
 		1, 0, 0, 0, 71, 72, 5, 11, 0, 0, 72, 73, 3, 10, 5, 0, 73, 74, 5, 11, 0,
 		0, 74, 9, 1, 0, 0, 0, 75, 77, 7, 0, 0, 0, 76, 75, 1, 0, 0, 0, 77, 78, 1,
 		0, 0, 0, 78, 76, 1, 0, 0, 0, 78, 79, 1, 0, 0, 0, 79, 82, 1, 0, 0, 0, 80,
@@ -122,7 +122,7 @@ func markdownparserParserInit() {
 		178, 3, 28, 14, 0, 175, 178, 3, 30, 15, 0, 176, 178, 3, 32, 16, 0, 177,
 		171, 1, 0, 0, 0, 177, 172, 1, 0, 0, 0, 177, 173, 1, 0, 0, 0, 177, 174,
 		1, 0, 0, 0, 177, 175, 1, 0, 0, 0, 177, 176, 1, 0, 0, 0, 178, 37, 1, 0,
-		0, 0, 21, 41, 49, 56, 58, 63, 69, 78, 81, 83, 92, 95, 97, 110, 118, 127,
+		0, 0, 21, 41, 48, 55, 57, 62, 69, 78, 81, 83, 92, 95, 97, 110, 118, 127,
 		136, 145, 154, 163, 169, 177,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
@@ -374,7 +374,6 @@ type IBlockContext interface {
 	// Getter signatures
 	Heading() IHeadingContext
 	Paragraph() IParagraphContext
-	Code() ICodeContext
 
 	// IsBlockContext differentiates from other interfaces.
 	IsBlockContext()
@@ -444,22 +443,6 @@ func (s *BlockContext) Paragraph() IParagraphContext {
 	return t.(IParagraphContext)
 }
 
-func (s *BlockContext) Code() ICodeContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(ICodeContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ICodeContext)
-}
-
 func (s *BlockContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -483,7 +466,7 @@ func (s *BlockContext) ExitRule(listener antlr.ParseTreeListener) {
 func (p *MarkdownParser) Block() (localctx IBlockContext) {
 	localctx = NewBlockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, MarkdownParserRULE_block)
-	p.SetState(49)
+	p.SetState(48)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -497,18 +480,11 @@ func (p *MarkdownParser) Block() (localctx IBlockContext) {
 			p.Heading()
 		}
 
-	case MarkdownParserWHITESPACE, MarkdownParserBOLD_AND_ITALIC_MARKER, MarkdownParserITALIC_MARKER, MarkdownParserBOLD_MARKER, MarkdownParserPUNCTUATION, MarkdownParserNUMBER, MarkdownParserWORD:
+	case MarkdownParserWHITESPACE, MarkdownParserBOLD_AND_ITALIC_MARKER, MarkdownParserITALIC_MARKER, MarkdownParserBOLD_MARKER, MarkdownParserCODE_MARKER, MarkdownParserPUNCTUATION, MarkdownParserNUMBER, MarkdownParserWORD:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(47)
 			p.Paragraph()
-		}
-
-	case MarkdownParserCODE_MARKER:
-		p.EnterOuterAlt(localctx, 3)
-		{
-			p.SetState(48)
-			p.Code()
 		}
 
 	default:
@@ -693,7 +669,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(56)
+	p.SetState(55)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -702,7 +678,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 	for ok := true; ok; ok = _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		switch _alt {
 		case 1:
-			p.SetState(56)
+			p.SetState(55)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -711,7 +687,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 			switch p.GetTokenStream().LA(1) {
 			case MarkdownParserWORD:
 				{
-					p.SetState(51)
+					p.SetState(50)
 					p.Match(MarkdownParserWORD)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -721,7 +697,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 
 			case MarkdownParserWHITESPACE:
 				{
-					p.SetState(52)
+					p.SetState(51)
 					p.Match(MarkdownParserWHITESPACE)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -731,7 +707,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 
 			case MarkdownParserNUMBER:
 				{
-					p.SetState(53)
+					p.SetState(52)
 					p.Match(MarkdownParserNUMBER)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -741,7 +717,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 
 			case MarkdownParserPUNCTUATION:
 				{
-					p.SetState(54)
+					p.SetState(53)
 					p.Match(MarkdownParserPUNCTUATION)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -749,9 +725,9 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 					}
 				}
 
-			case MarkdownParserBOLD_AND_ITALIC_MARKER, MarkdownParserITALIC_MARKER, MarkdownParserBOLD_MARKER:
+			case MarkdownParserBOLD_AND_ITALIC_MARKER, MarkdownParserITALIC_MARKER, MarkdownParserBOLD_MARKER, MarkdownParserCODE_MARKER:
 				{
-					p.SetState(55)
+					p.SetState(54)
 					p.Inline()
 				}
 
@@ -765,14 +741,14 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 			goto errorExit
 		}
 
-		p.SetState(58)
+		p.SetState(57)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 3, p.GetParserRuleContext())
 		if p.HasError() {
 			goto errorExit
 		}
 	}
-	p.SetState(63)
+	p.SetState(62)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -784,7 +760,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(60)
+				p.SetState(59)
 				p.Match(MarkdownParserNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -793,7 +769,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 			}
 
 		}
-		p.SetState(65)
+		p.SetState(64)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -828,6 +804,7 @@ type IInlineContext interface {
 	Italic() IItalicContext
 	Bold() IBoldContext
 	Bold_and_italic() IBold_and_italicContext
+	Code() ICodeContext
 
 	// IsInlineContext differentiates from other interfaces.
 	IsInlineContext()
@@ -913,6 +890,22 @@ func (s *InlineContext) Bold_and_italic() IBold_and_italicContext {
 	return t.(IBold_and_italicContext)
 }
 
+func (s *InlineContext) Code() ICodeContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(ICodeContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ICodeContext)
+}
+
 func (s *InlineContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -946,22 +939,29 @@ func (p *MarkdownParser) Inline() (localctx IInlineContext) {
 	case MarkdownParserITALIC_MARKER:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(66)
+			p.SetState(65)
 			p.Italic()
 		}
 
 	case MarkdownParserBOLD_MARKER:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(67)
+			p.SetState(66)
 			p.Bold()
 		}
 
 	case MarkdownParserBOLD_AND_ITALIC_MARKER:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(68)
+			p.SetState(67)
 			p.Bold_and_italic()
+		}
+
+	case MarkdownParserCODE_MARKER:
+		p.EnterOuterAlt(localctx, 4)
+		{
+			p.SetState(68)
+			p.Code()
 		}
 
 	default:

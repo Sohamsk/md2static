@@ -21,4 +21,4 @@ CODE_MARKER: '`';
 PUNCTUATION: [.,!?;:(){}'"] | '[' | ']' ;
 NUMBER: [0-9]+ ;
 
-WORD : ~[\r\n#* \t]+;
+WORD : ~[\r\n#* \t`]+;

@@ -32,11 +32,7 @@ func main() {
 	antlr.ParseTreeWalkerDefault.Walk(md, tree)
 	writer.Flush()
 
-	err = os.Mkdir("output", 0755)
-	if err != nil {
-		log.Panic(err)
-	}
-	f, err := os.Create("./output/index.html")
+	f, err := os.OpenFile("./output/index.html", os.O_TRUNC|os.O_WRONLY|os.O_CREATE, 0644)
 	if err != nil {
 		log.Panic(err)
 	}

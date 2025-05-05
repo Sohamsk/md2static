@@ -9,7 +9,6 @@ document
 block
     : heading
     | paragraph
-    | code
     ;
 
 line
@@ -20,6 +19,7 @@ inline
     : italic
     | bold
     | bold_and_italic
+    | code
     ;
 
 italic

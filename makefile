@@ -5,4 +5,8 @@ setup:
 
 test:
 	go build -o ./dist/main.out ./cmd/main/.
+	[ -d ./output/ ] || mkdir output
 	./dist/main.out ./testfiles/test.md
+
+clean:
+	rm -rf ./output/ ./dist/
