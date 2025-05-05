@@ -12,7 +12,11 @@ block
     ;
 
 line
-    : (WORD | WHITESPACE | NUMBER | PUNCTUATION | inline)+ NEWLINE*
+    : (WORD | WHITESPACE | NUMBER | PUNCTUATION | inline | linebreak)+ NEWLINE*
+    ;
+
+linebreak
+    : LINE_BREAK
     ;
 
 inline

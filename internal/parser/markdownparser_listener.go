@@ -16,6 +16,9 @@ type MarkdownParserListener interface {
 	// EnterLine is called when entering the line production.
 	EnterLine(c *LineContext)
 
+	// EnterLinebreak is called when entering the linebreak production.
+	EnterLinebreak(c *LinebreakContext)
+
 	// EnterInline is called when entering the inline production.
 	EnterInline(c *InlineContext)
 
@@ -72,6 +75,9 @@ type MarkdownParserListener interface {
 
 	// ExitLine is called when exiting the line production.
 	ExitLine(c *LineContext)
+
+	// ExitLinebreak is called when exiting the linebreak production.
+	ExitLinebreak(c *LinebreakContext)
 
 	// ExitInline is called when exiting the inline production.
 	ExitInline(c *InlineContext)

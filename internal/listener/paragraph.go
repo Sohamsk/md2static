@@ -23,7 +23,8 @@ func (s *MarkdownListener) EnterParagraph(ctx *parser.ParagraphContext) {
 						content += "<code>" + v.GetData().GetText() + "</code>"
 					}
 				}
-
+			} else if _, ok := grandChild.(*parser.LinebreakContext); ok {
+				content += "<br>"
 			} else {
 				tn, _ := grandChild.(antlr.TerminalNode)
 				content += tn.GetText()

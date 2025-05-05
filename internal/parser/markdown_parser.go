@@ -32,98 +32,101 @@ var MarkdownParserParserStaticData struct {
 func markdownparserParserInit() {
 	staticData := &MarkdownParserParserStaticData
 	staticData.LiteralNames = []string{
-		"", "", "", "", "'#'", "", "", "", "", "", "'***'", "'*'", "'**'", "'`'",
+		"", "", "", "", "", "'#'", "", "", "", "", "", "'***'", "'*'", "'**'",
+		"'`'",
 	}
 	staticData.SymbolicNames = []string{
-		"", "WHITESPACE", "NEWLINE", "ESCAPE_CHAR", "HASH", "H2", "H3", "H4",
-		"H5", "H6", "BOLD_AND_ITALIC_MARKER", "ITALIC_MARKER", "BOLD_MARKER",
+		"", "WHITESPACE", "NEWLINE", "ESCAPE_CHAR", "LINE_BREAK", "HASH", "H2",
+		"H3", "H4", "H5", "H6", "BOLD_AND_ITALIC_MARKER", "ITALIC_MARKER", "BOLD_MARKER",
 		"CODE_MARKER", "PUNCTUATION", "NUMBER", "WORD",
 	}
 	staticData.RuleNames = []string{
-		"document", "block", "line", "inline", "italic", "italic_line", "bold",
-		"bold_line", "bold_and_italic", "code", "code_text", "h1", "h2", "h3",
-		"h4", "h5", "h6", "paragraph", "heading",
+		"document", "block", "line", "linebreak", "inline", "italic", "italic_line",
+		"bold", "bold_line", "bold_and_italic", "code", "code_text", "h1", "h2",
+		"h3", "h4", "h5", "h6", "paragraph", "heading",
 	}
 	staticData.PredictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
-		4, 1, 16, 180, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
+		4, 1, 17, 185, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
 		4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7,
 		10, 2, 11, 7, 11, 2, 12, 7, 12, 2, 13, 7, 13, 2, 14, 7, 14, 2, 15, 7, 15,
-		2, 16, 7, 16, 2, 17, 7, 17, 2, 18, 7, 18, 1, 0, 5, 0, 40, 8, 0, 10, 0,
-		12, 0, 43, 9, 0, 1, 0, 1, 0, 1, 1, 1, 1, 3, 1, 49, 8, 1, 1, 2, 1, 2, 1,
-		2, 1, 2, 1, 2, 4, 2, 56, 8, 2, 11, 2, 12, 2, 57, 1, 2, 5, 2, 61, 8, 2,
-		10, 2, 12, 2, 64, 9, 2, 1, 3, 1, 3, 1, 3, 1, 3, 3, 3, 70, 8, 3, 1, 4, 1,
-		4, 1, 4, 1, 4, 1, 5, 4, 5, 77, 8, 5, 11, 5, 12, 5, 78, 1, 5, 4, 5, 82,
-		8, 5, 11, 5, 12, 5, 83, 1, 6, 1, 6, 1, 6, 1, 6, 1, 7, 4, 7, 91, 8, 7, 11,
-		7, 12, 7, 92, 1, 7, 4, 7, 96, 8, 7, 11, 7, 12, 7, 97, 1, 8, 1, 8, 1, 8,
-		1, 8, 1, 9, 1, 9, 1, 9, 1, 9, 1, 10, 4, 10, 109, 8, 10, 11, 10, 12, 10,
-		110, 1, 11, 1, 11, 1, 11, 1, 11, 5, 11, 117, 8, 11, 10, 11, 12, 11, 120,
-		9, 11, 1, 12, 1, 12, 1, 12, 1, 12, 5, 12, 126, 8, 12, 10, 12, 12, 12, 129,
-		9, 12, 1, 13, 1, 13, 1, 13, 1, 13, 5, 13, 135, 8, 13, 10, 13, 12, 13, 138,
-		9, 13, 1, 14, 1, 14, 1, 14, 1, 14, 5, 14, 144, 8, 14, 10, 14, 12, 14, 147,
-		9, 14, 1, 15, 1, 15, 1, 15, 1, 15, 5, 15, 153, 8, 15, 10, 15, 12, 15, 156,
-		9, 15, 1, 16, 1, 16, 1, 16, 1, 16, 5, 16, 162, 8, 16, 10, 16, 12, 16, 165,
-		9, 16, 1, 17, 4, 17, 168, 8, 17, 11, 17, 12, 17, 169, 1, 18, 1, 18, 1,
-		18, 1, 18, 1, 18, 1, 18, 3, 18, 178, 8, 18, 1, 18, 0, 0, 19, 0, 2, 4, 6,
-		8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 0, 2, 2, 0,
-		1, 1, 16, 16, 3, 0, 1, 1, 3, 3, 16, 16, 190, 0, 41, 1, 0, 0, 0, 2, 48,
-		1, 0, 0, 0, 4, 55, 1, 0, 0, 0, 6, 69, 1, 0, 0, 0, 8, 71, 1, 0, 0, 0, 10,
-		81, 1, 0, 0, 0, 12, 85, 1, 0, 0, 0, 14, 95, 1, 0, 0, 0, 16, 99, 1, 0, 0,
-		0, 18, 103, 1, 0, 0, 0, 20, 108, 1, 0, 0, 0, 22, 112, 1, 0, 0, 0, 24, 121,
-		1, 0, 0, 0, 26, 130, 1, 0, 0, 0, 28, 139, 1, 0, 0, 0, 30, 148, 1, 0, 0,
-		0, 32, 157, 1, 0, 0, 0, 34, 167, 1, 0, 0, 0, 36, 177, 1, 0, 0, 0, 38, 40,
-		3, 2, 1, 0, 39, 38, 1, 0, 0, 0, 40, 43, 1, 0, 0, 0, 41, 39, 1, 0, 0, 0,
-		41, 42, 1, 0, 0, 0, 42, 44, 1, 0, 0, 0, 43, 41, 1, 0, 0, 0, 44, 45, 5,
-		0, 0, 1, 45, 1, 1, 0, 0, 0, 46, 49, 3, 36, 18, 0, 47, 49, 3, 34, 17, 0,
-		48, 46, 1, 0, 0, 0, 48, 47, 1, 0, 0, 0, 49, 3, 1, 0, 0, 0, 50, 56, 5, 16,
-		0, 0, 51, 56, 5, 1, 0, 0, 52, 56, 5, 15, 0, 0, 53, 56, 5, 14, 0, 0, 54,
-		56, 3, 6, 3, 0, 55, 50, 1, 0, 0, 0, 55, 51, 1, 0, 0, 0, 55, 52, 1, 0, 0,
-		0, 55, 53, 1, 0, 0, 0, 55, 54, 1, 0, 0, 0, 56, 57, 1, 0, 0, 0, 57, 55,
-		1, 0, 0, 0, 57, 58, 1, 0, 0, 0, 58, 62, 1, 0, 0, 0, 59, 61, 5, 2, 0, 0,
-		60, 59, 1, 0, 0, 0, 61, 64, 1, 0, 0, 0, 62, 60, 1, 0, 0, 0, 62, 63, 1,
-		0, 0, 0, 63, 5, 1, 0, 0, 0, 64, 62, 1, 0, 0, 0, 65, 70, 3, 8, 4, 0, 66,
-		70, 3, 12, 6, 0, 67, 70, 3, 16, 8, 0, 68, 70, 3, 18, 9, 0, 69, 65, 1, 0,
-		0, 0, 69, 66, 1, 0, 0, 0, 69, 67, 1, 0, 0, 0, 69, 68, 1, 0, 0, 0, 70, 7,
-		1, 0, 0, 0, 71, 72, 5, 11, 0, 0, 72, 73, 3, 10, 5, 0, 73, 74, 5, 11, 0,
-		0, 74, 9, 1, 0, 0, 0, 75, 77, 7, 0, 0, 0, 76, 75, 1, 0, 0, 0, 77, 78, 1,
-		0, 0, 0, 78, 76, 1, 0, 0, 0, 78, 79, 1, 0, 0, 0, 79, 82, 1, 0, 0, 0, 80,
-		82, 3, 12, 6, 0, 81, 76, 1, 0, 0, 0, 81, 80, 1, 0, 0, 0, 82, 83, 1, 0,
-		0, 0, 83, 81, 1, 0, 0, 0, 83, 84, 1, 0, 0, 0, 84, 11, 1, 0, 0, 0, 85, 86,
-		5, 12, 0, 0, 86, 87, 3, 14, 7, 0, 87, 88, 5, 12, 0, 0, 88, 13, 1, 0, 0,
-		0, 89, 91, 7, 0, 0, 0, 90, 89, 1, 0, 0, 0, 91, 92, 1, 0, 0, 0, 92, 90,
-		1, 0, 0, 0, 92, 93, 1, 0, 0, 0, 93, 96, 1, 0, 0, 0, 94, 96, 3, 8, 4, 0,
-		95, 90, 1, 0, 0, 0, 95, 94, 1, 0, 0, 0, 96, 97, 1, 0, 0, 0, 97, 95, 1,
-		0, 0, 0, 97, 98, 1, 0, 0, 0, 98, 15, 1, 0, 0, 0, 99, 100, 5, 10, 0, 0,
-		100, 101, 3, 14, 7, 0, 101, 102, 5, 10, 0, 0, 102, 17, 1, 0, 0, 0, 103,
-		104, 5, 13, 0, 0, 104, 105, 3, 20, 10, 0, 105, 106, 5, 13, 0, 0, 106, 19,
-		1, 0, 0, 0, 107, 109, 7, 1, 0, 0, 108, 107, 1, 0, 0, 0, 109, 110, 1, 0,
-		0, 0, 110, 108, 1, 0, 0, 0, 110, 111, 1, 0, 0, 0, 111, 21, 1, 0, 0, 0,
-		112, 113, 5, 4, 0, 0, 113, 114, 5, 1, 0, 0, 114, 118, 3, 4, 2, 0, 115,
-		117, 5, 2, 0, 0, 116, 115, 1, 0, 0, 0, 117, 120, 1, 0, 0, 0, 118, 116,
-		1, 0, 0, 0, 118, 119, 1, 0, 0, 0, 119, 23, 1, 0, 0, 0, 120, 118, 1, 0,
-		0, 0, 121, 122, 5, 5, 0, 0, 122, 123, 5, 1, 0, 0, 123, 127, 3, 4, 2, 0,
-		124, 126, 5, 2, 0, 0, 125, 124, 1, 0, 0, 0, 126, 129, 1, 0, 0, 0, 127,
-		125, 1, 0, 0, 0, 127, 128, 1, 0, 0, 0, 128, 25, 1, 0, 0, 0, 129, 127, 1,
-		0, 0, 0, 130, 131, 5, 6, 0, 0, 131, 132, 5, 1, 0, 0, 132, 136, 3, 4, 2,
-		0, 133, 135, 5, 2, 0, 0, 134, 133, 1, 0, 0, 0, 135, 138, 1, 0, 0, 0, 136,
-		134, 1, 0, 0, 0, 136, 137, 1, 0, 0, 0, 137, 27, 1, 0, 0, 0, 138, 136, 1,
-		0, 0, 0, 139, 140, 5, 7, 0, 0, 140, 141, 5, 1, 0, 0, 141, 145, 3, 4, 2,
-		0, 142, 144, 5, 2, 0, 0, 143, 142, 1, 0, 0, 0, 144, 147, 1, 0, 0, 0, 145,
-		143, 1, 0, 0, 0, 145, 146, 1, 0, 0, 0, 146, 29, 1, 0, 0, 0, 147, 145, 1,
-		0, 0, 0, 148, 149, 5, 8, 0, 0, 149, 150, 5, 1, 0, 0, 150, 154, 3, 4, 2,
-		0, 151, 153, 5, 2, 0, 0, 152, 151, 1, 0, 0, 0, 153, 156, 1, 0, 0, 0, 154,
-		152, 1, 0, 0, 0, 154, 155, 1, 0, 0, 0, 155, 31, 1, 0, 0, 0, 156, 154, 1,
-		0, 0, 0, 157, 158, 5, 9, 0, 0, 158, 159, 5, 1, 0, 0, 159, 163, 3, 4, 2,
-		0, 160, 162, 5, 2, 0, 0, 161, 160, 1, 0, 0, 0, 162, 165, 1, 0, 0, 0, 163,
-		161, 1, 0, 0, 0, 163, 164, 1, 0, 0, 0, 164, 33, 1, 0, 0, 0, 165, 163, 1,
-		0, 0, 0, 166, 168, 3, 4, 2, 0, 167, 166, 1, 0, 0, 0, 168, 169, 1, 0, 0,
-		0, 169, 167, 1, 0, 0, 0, 169, 170, 1, 0, 0, 0, 170, 35, 1, 0, 0, 0, 171,
-		178, 3, 22, 11, 0, 172, 178, 3, 24, 12, 0, 173, 178, 3, 26, 13, 0, 174,
-		178, 3, 28, 14, 0, 175, 178, 3, 30, 15, 0, 176, 178, 3, 32, 16, 0, 177,
-		171, 1, 0, 0, 0, 177, 172, 1, 0, 0, 0, 177, 173, 1, 0, 0, 0, 177, 174,
-		1, 0, 0, 0, 177, 175, 1, 0, 0, 0, 177, 176, 1, 0, 0, 0, 178, 37, 1, 0,
-		0, 0, 21, 41, 48, 55, 57, 62, 69, 78, 81, 83, 92, 95, 97, 110, 118, 127,
-		136, 145, 154, 163, 169, 177,
+		2, 16, 7, 16, 2, 17, 7, 17, 2, 18, 7, 18, 2, 19, 7, 19, 1, 0, 5, 0, 42,
+		8, 0, 10, 0, 12, 0, 45, 9, 0, 1, 0, 1, 0, 1, 1, 1, 1, 3, 1, 51, 8, 1, 1,
+		2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 4, 2, 59, 8, 2, 11, 2, 12, 2, 60, 1, 2,
+		5, 2, 64, 8, 2, 10, 2, 12, 2, 67, 9, 2, 1, 3, 1, 3, 1, 4, 1, 4, 1, 4, 1,
+		4, 3, 4, 75, 8, 4, 1, 5, 1, 5, 1, 5, 1, 5, 1, 6, 4, 6, 82, 8, 6, 11, 6,
+		12, 6, 83, 1, 6, 4, 6, 87, 8, 6, 11, 6, 12, 6, 88, 1, 7, 1, 7, 1, 7, 1,
+		7, 1, 8, 4, 8, 96, 8, 8, 11, 8, 12, 8, 97, 1, 8, 4, 8, 101, 8, 8, 11, 8,
+		12, 8, 102, 1, 9, 1, 9, 1, 9, 1, 9, 1, 10, 1, 10, 1, 10, 1, 10, 1, 11,
+		4, 11, 114, 8, 11, 11, 11, 12, 11, 115, 1, 12, 1, 12, 1, 12, 1, 12, 5,
+		12, 122, 8, 12, 10, 12, 12, 12, 125, 9, 12, 1, 13, 1, 13, 1, 13, 1, 13,
+		5, 13, 131, 8, 13, 10, 13, 12, 13, 134, 9, 13, 1, 14, 1, 14, 1, 14, 1,
+		14, 5, 14, 140, 8, 14, 10, 14, 12, 14, 143, 9, 14, 1, 15, 1, 15, 1, 15,
+		1, 15, 5, 15, 149, 8, 15, 10, 15, 12, 15, 152, 9, 15, 1, 16, 1, 16, 1,
+		16, 1, 16, 5, 16, 158, 8, 16, 10, 16, 12, 16, 161, 9, 16, 1, 17, 1, 17,
+		1, 17, 1, 17, 5, 17, 167, 8, 17, 10, 17, 12, 17, 170, 9, 17, 1, 18, 4,
+		18, 173, 8, 18, 11, 18, 12, 18, 174, 1, 19, 1, 19, 1, 19, 1, 19, 1, 19,
+		1, 19, 3, 19, 183, 8, 19, 1, 19, 0, 0, 20, 0, 2, 4, 6, 8, 10, 12, 14, 16,
+		18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 0, 2, 2, 0, 1, 1, 17, 17, 3,
+		0, 1, 1, 3, 3, 17, 17, 195, 0, 43, 1, 0, 0, 0, 2, 50, 1, 0, 0, 0, 4, 58,
+		1, 0, 0, 0, 6, 68, 1, 0, 0, 0, 8, 74, 1, 0, 0, 0, 10, 76, 1, 0, 0, 0, 12,
+		86, 1, 0, 0, 0, 14, 90, 1, 0, 0, 0, 16, 100, 1, 0, 0, 0, 18, 104, 1, 0,
+		0, 0, 20, 108, 1, 0, 0, 0, 22, 113, 1, 0, 0, 0, 24, 117, 1, 0, 0, 0, 26,
+		126, 1, 0, 0, 0, 28, 135, 1, 0, 0, 0, 30, 144, 1, 0, 0, 0, 32, 153, 1,
+		0, 0, 0, 34, 162, 1, 0, 0, 0, 36, 172, 1, 0, 0, 0, 38, 182, 1, 0, 0, 0,
+		40, 42, 3, 2, 1, 0, 41, 40, 1, 0, 0, 0, 42, 45, 1, 0, 0, 0, 43, 41, 1,
+		0, 0, 0, 43, 44, 1, 0, 0, 0, 44, 46, 1, 0, 0, 0, 45, 43, 1, 0, 0, 0, 46,
+		47, 5, 0, 0, 1, 47, 1, 1, 0, 0, 0, 48, 51, 3, 38, 19, 0, 49, 51, 3, 36,
+		18, 0, 50, 48, 1, 0, 0, 0, 50, 49, 1, 0, 0, 0, 51, 3, 1, 0, 0, 0, 52, 59,
+		5, 17, 0, 0, 53, 59, 5, 1, 0, 0, 54, 59, 5, 16, 0, 0, 55, 59, 5, 15, 0,
+		0, 56, 59, 3, 8, 4, 0, 57, 59, 3, 6, 3, 0, 58, 52, 1, 0, 0, 0, 58, 53,
+		1, 0, 0, 0, 58, 54, 1, 0, 0, 0, 58, 55, 1, 0, 0, 0, 58, 56, 1, 0, 0, 0,
+		58, 57, 1, 0, 0, 0, 59, 60, 1, 0, 0, 0, 60, 58, 1, 0, 0, 0, 60, 61, 1,
+		0, 0, 0, 61, 65, 1, 0, 0, 0, 62, 64, 5, 2, 0, 0, 63, 62, 1, 0, 0, 0, 64,
+		67, 1, 0, 0, 0, 65, 63, 1, 0, 0, 0, 65, 66, 1, 0, 0, 0, 66, 5, 1, 0, 0,
+		0, 67, 65, 1, 0, 0, 0, 68, 69, 5, 4, 0, 0, 69, 7, 1, 0, 0, 0, 70, 75, 3,
+		10, 5, 0, 71, 75, 3, 14, 7, 0, 72, 75, 3, 18, 9, 0, 73, 75, 3, 20, 10,
+		0, 74, 70, 1, 0, 0, 0, 74, 71, 1, 0, 0, 0, 74, 72, 1, 0, 0, 0, 74, 73,
+		1, 0, 0, 0, 75, 9, 1, 0, 0, 0, 76, 77, 5, 12, 0, 0, 77, 78, 3, 12, 6, 0,
+		78, 79, 5, 12, 0, 0, 79, 11, 1, 0, 0, 0, 80, 82, 7, 0, 0, 0, 81, 80, 1,
+		0, 0, 0, 82, 83, 1, 0, 0, 0, 83, 81, 1, 0, 0, 0, 83, 84, 1, 0, 0, 0, 84,
+		87, 1, 0, 0, 0, 85, 87, 3, 14, 7, 0, 86, 81, 1, 0, 0, 0, 86, 85, 1, 0,
+		0, 0, 87, 88, 1, 0, 0, 0, 88, 86, 1, 0, 0, 0, 88, 89, 1, 0, 0, 0, 89, 13,
+		1, 0, 0, 0, 90, 91, 5, 13, 0, 0, 91, 92, 3, 16, 8, 0, 92, 93, 5, 13, 0,
+		0, 93, 15, 1, 0, 0, 0, 94, 96, 7, 0, 0, 0, 95, 94, 1, 0, 0, 0, 96, 97,
+		1, 0, 0, 0, 97, 95, 1, 0, 0, 0, 97, 98, 1, 0, 0, 0, 98, 101, 1, 0, 0, 0,
+		99, 101, 3, 10, 5, 0, 100, 95, 1, 0, 0, 0, 100, 99, 1, 0, 0, 0, 101, 102,
+		1, 0, 0, 0, 102, 100, 1, 0, 0, 0, 102, 103, 1, 0, 0, 0, 103, 17, 1, 0,
+		0, 0, 104, 105, 5, 11, 0, 0, 105, 106, 3, 16, 8, 0, 106, 107, 5, 11, 0,
+		0, 107, 19, 1, 0, 0, 0, 108, 109, 5, 14, 0, 0, 109, 110, 3, 22, 11, 0,
+		110, 111, 5, 14, 0, 0, 111, 21, 1, 0, 0, 0, 112, 114, 7, 1, 0, 0, 113,
+		112, 1, 0, 0, 0, 114, 115, 1, 0, 0, 0, 115, 113, 1, 0, 0, 0, 115, 116,
+		1, 0, 0, 0, 116, 23, 1, 0, 0, 0, 117, 118, 5, 5, 0, 0, 118, 119, 5, 1,
+		0, 0, 119, 123, 3, 4, 2, 0, 120, 122, 5, 2, 0, 0, 121, 120, 1, 0, 0, 0,
+		122, 125, 1, 0, 0, 0, 123, 121, 1, 0, 0, 0, 123, 124, 1, 0, 0, 0, 124,
+		25, 1, 0, 0, 0, 125, 123, 1, 0, 0, 0, 126, 127, 5, 6, 0, 0, 127, 128, 5,
+		1, 0, 0, 128, 132, 3, 4, 2, 0, 129, 131, 5, 2, 0, 0, 130, 129, 1, 0, 0,
+		0, 131, 134, 1, 0, 0, 0, 132, 130, 1, 0, 0, 0, 132, 133, 1, 0, 0, 0, 133,
+		27, 1, 0, 0, 0, 134, 132, 1, 0, 0, 0, 135, 136, 5, 7, 0, 0, 136, 137, 5,
+		1, 0, 0, 137, 141, 3, 4, 2, 0, 138, 140, 5, 2, 0, 0, 139, 138, 1, 0, 0,
+		0, 140, 143, 1, 0, 0, 0, 141, 139, 1, 0, 0, 0, 141, 142, 1, 0, 0, 0, 142,
+		29, 1, 0, 0, 0, 143, 141, 1, 0, 0, 0, 144, 145, 5, 8, 0, 0, 145, 146, 5,
+		1, 0, 0, 146, 150, 3, 4, 2, 0, 147, 149, 5, 2, 0, 0, 148, 147, 1, 0, 0,
+		0, 149, 152, 1, 0, 0, 0, 150, 148, 1, 0, 0, 0, 150, 151, 1, 0, 0, 0, 151,
+		31, 1, 0, 0, 0, 152, 150, 1, 0, 0, 0, 153, 154, 5, 9, 0, 0, 154, 155, 5,
+		1, 0, 0, 155, 159, 3, 4, 2, 0, 156, 158, 5, 2, 0, 0, 157, 156, 1, 0, 0,
+		0, 158, 161, 1, 0, 0, 0, 159, 157, 1, 0, 0, 0, 159, 160, 1, 0, 0, 0, 160,
+		33, 1, 0, 0, 0, 161, 159, 1, 0, 0, 0, 162, 163, 5, 10, 0, 0, 163, 164,
+		5, 1, 0, 0, 164, 168, 3, 4, 2, 0, 165, 167, 5, 2, 0, 0, 166, 165, 1, 0,
+		0, 0, 167, 170, 1, 0, 0, 0, 168, 166, 1, 0, 0, 0, 168, 169, 1, 0, 0, 0,
+		169, 35, 1, 0, 0, 0, 170, 168, 1, 0, 0, 0, 171, 173, 3, 4, 2, 0, 172, 171,
+		1, 0, 0, 0, 173, 174, 1, 0, 0, 0, 174, 172, 1, 0, 0, 0, 174, 175, 1, 0,
+		0, 0, 175, 37, 1, 0, 0, 0, 176, 183, 3, 24, 12, 0, 177, 183, 3, 26, 13,
+		0, 178, 183, 3, 28, 14, 0, 179, 183, 3, 30, 15, 0, 180, 183, 3, 32, 16,
+		0, 181, 183, 3, 34, 17, 0, 182, 176, 1, 0, 0, 0, 182, 177, 1, 0, 0, 0,
+		182, 178, 1, 0, 0, 0, 182, 179, 1, 0, 0, 0, 182, 180, 1, 0, 0, 0, 182,
+		181, 1, 0, 0, 0, 183, 39, 1, 0, 0, 0, 21, 43, 50, 58, 60, 65, 74, 83, 86,
+		88, 97, 100, 102, 115, 123, 132, 141, 150, 159, 168, 174, 182,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
 	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -165,19 +168,20 @@ const (
 	MarkdownParserWHITESPACE             = 1
 	MarkdownParserNEWLINE                = 2
 	MarkdownParserESCAPE_CHAR            = 3
-	MarkdownParserHASH                   = 4
-	MarkdownParserH2                     = 5
-	MarkdownParserH3                     = 6
-	MarkdownParserH4                     = 7
-	MarkdownParserH5                     = 8
-	MarkdownParserH6                     = 9
-	MarkdownParserBOLD_AND_ITALIC_MARKER = 10
-	MarkdownParserITALIC_MARKER          = 11
-	MarkdownParserBOLD_MARKER            = 12
-	MarkdownParserCODE_MARKER            = 13
-	MarkdownParserPUNCTUATION            = 14
-	MarkdownParserNUMBER                 = 15
-	MarkdownParserWORD                   = 16
+	MarkdownParserLINE_BREAK             = 4
+	MarkdownParserHASH                   = 5
+	MarkdownParserH2                     = 6
+	MarkdownParserH3                     = 7
+	MarkdownParserH4                     = 8
+	MarkdownParserH5                     = 9
+	MarkdownParserH6                     = 10
+	MarkdownParserBOLD_AND_ITALIC_MARKER = 11
+	MarkdownParserITALIC_MARKER          = 12
+	MarkdownParserBOLD_MARKER            = 13
+	MarkdownParserCODE_MARKER            = 14
+	MarkdownParserPUNCTUATION            = 15
+	MarkdownParserNUMBER                 = 16
+	MarkdownParserWORD                   = 17
 )
 
 // MarkdownParser rules.
@@ -185,22 +189,23 @@ const (
 	MarkdownParserRULE_document        = 0
 	MarkdownParserRULE_block           = 1
 	MarkdownParserRULE_line            = 2
-	MarkdownParserRULE_inline          = 3
-	MarkdownParserRULE_italic          = 4
-	MarkdownParserRULE_italic_line     = 5
-	MarkdownParserRULE_bold            = 6
-	MarkdownParserRULE_bold_line       = 7
-	MarkdownParserRULE_bold_and_italic = 8
-	MarkdownParserRULE_code            = 9
-	MarkdownParserRULE_code_text       = 10
-	MarkdownParserRULE_h1              = 11
-	MarkdownParserRULE_h2              = 12
-	MarkdownParserRULE_h3              = 13
-	MarkdownParserRULE_h4              = 14
-	MarkdownParserRULE_h5              = 15
-	MarkdownParserRULE_h6              = 16
-	MarkdownParserRULE_paragraph       = 17
-	MarkdownParserRULE_heading         = 18
+	MarkdownParserRULE_linebreak       = 3
+	MarkdownParserRULE_inline          = 4
+	MarkdownParserRULE_italic          = 5
+	MarkdownParserRULE_italic_line     = 6
+	MarkdownParserRULE_bold            = 7
+	MarkdownParserRULE_bold_line       = 8
+	MarkdownParserRULE_bold_and_italic = 9
+	MarkdownParserRULE_code            = 10
+	MarkdownParserRULE_code_text       = 11
+	MarkdownParserRULE_h1              = 12
+	MarkdownParserRULE_h2              = 13
+	MarkdownParserRULE_h3              = 14
+	MarkdownParserRULE_h4              = 15
+	MarkdownParserRULE_h5              = 16
+	MarkdownParserRULE_h6              = 17
+	MarkdownParserRULE_paragraph       = 18
+	MarkdownParserRULE_heading         = 19
 )
 
 // IDocumentContext is an interface to support dynamic dispatch.
@@ -322,20 +327,20 @@ func (p *MarkdownParser) Document() (localctx IDocumentContext) {
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(41)
+	p.SetState(43)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&131058) != 0 {
+	for (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&262130) != 0 {
 		{
-			p.SetState(38)
+			p.SetState(40)
 			p.Block()
 		}
 
-		p.SetState(43)
+		p.SetState(45)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -343,7 +348,7 @@ func (p *MarkdownParser) Document() (localctx IDocumentContext) {
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(44)
+		p.SetState(46)
 		p.Match(MarkdownParserEOF)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -466,7 +471,7 @@ func (s *BlockContext) ExitRule(listener antlr.ParseTreeListener) {
 func (p *MarkdownParser) Block() (localctx IBlockContext) {
 	localctx = NewBlockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, MarkdownParserRULE_block)
-	p.SetState(48)
+	p.SetState(50)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -476,14 +481,14 @@ func (p *MarkdownParser) Block() (localctx IBlockContext) {
 	case MarkdownParserHASH, MarkdownParserH2, MarkdownParserH3, MarkdownParserH4, MarkdownParserH5, MarkdownParserH6:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(46)
+			p.SetState(48)
 			p.Heading()
 		}
 
-	case MarkdownParserWHITESPACE, MarkdownParserBOLD_AND_ITALIC_MARKER, MarkdownParserITALIC_MARKER, MarkdownParserBOLD_MARKER, MarkdownParserCODE_MARKER, MarkdownParserPUNCTUATION, MarkdownParserNUMBER, MarkdownParserWORD:
+	case MarkdownParserWHITESPACE, MarkdownParserLINE_BREAK, MarkdownParserBOLD_AND_ITALIC_MARKER, MarkdownParserITALIC_MARKER, MarkdownParserBOLD_MARKER, MarkdownParserCODE_MARKER, MarkdownParserPUNCTUATION, MarkdownParserNUMBER, MarkdownParserWORD:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(47)
+			p.SetState(49)
 			p.Paragraph()
 		}
 
@@ -523,6 +528,8 @@ type ILineContext interface {
 	PUNCTUATION(i int) antlr.TerminalNode
 	AllInline() []IInlineContext
 	Inline(i int) IInlineContext
+	AllLinebreak() []ILinebreakContext
+	Linebreak(i int) ILinebreakContext
 	AllNEWLINE() []antlr.TerminalNode
 	NEWLINE(i int) antlr.TerminalNode
 
@@ -635,6 +642,47 @@ func (s *LineContext) Inline(i int) IInlineContext {
 	return t.(IInlineContext)
 }
 
+func (s *LineContext) AllLinebreak() []ILinebreakContext {
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(ILinebreakContext); ok {
+			len++
+		}
+	}
+
+	tst := make([]ILinebreakContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(ILinebreakContext); ok {
+			tst[i] = t.(ILinebreakContext)
+			i++
+		}
+	}
+
+	return tst
+}
+
+func (s *LineContext) Linebreak(i int) ILinebreakContext {
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(ILinebreakContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ILinebreakContext)
+}
+
 func (s *LineContext) AllNEWLINE() []antlr.TerminalNode {
 	return s.GetTokens(MarkdownParserNEWLINE)
 }
@@ -669,7 +717,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(55)
+	p.SetState(58)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -678,7 +726,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 	for ok := true; ok; ok = _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		switch _alt {
 		case 1:
-			p.SetState(55)
+			p.SetState(58)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -687,7 +735,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 			switch p.GetTokenStream().LA(1) {
 			case MarkdownParserWORD:
 				{
-					p.SetState(50)
+					p.SetState(52)
 					p.Match(MarkdownParserWORD)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -697,7 +745,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 
 			case MarkdownParserWHITESPACE:
 				{
-					p.SetState(51)
+					p.SetState(53)
 					p.Match(MarkdownParserWHITESPACE)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -707,7 +755,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 
 			case MarkdownParserNUMBER:
 				{
-					p.SetState(52)
+					p.SetState(54)
 					p.Match(MarkdownParserNUMBER)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -717,7 +765,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 
 			case MarkdownParserPUNCTUATION:
 				{
-					p.SetState(53)
+					p.SetState(55)
 					p.Match(MarkdownParserPUNCTUATION)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -727,8 +775,14 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 
 			case MarkdownParserBOLD_AND_ITALIC_MARKER, MarkdownParserITALIC_MARKER, MarkdownParserBOLD_MARKER, MarkdownParserCODE_MARKER:
 				{
-					p.SetState(54)
+					p.SetState(56)
 					p.Inline()
+				}
+
+			case MarkdownParserLINE_BREAK:
+				{
+					p.SetState(57)
+					p.Linebreak()
 				}
 
 			default:
@@ -741,14 +795,14 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 			goto errorExit
 		}
 
-		p.SetState(57)
+		p.SetState(60)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 3, p.GetParserRuleContext())
 		if p.HasError() {
 			goto errorExit
 		}
 	}
-	p.SetState(62)
+	p.SetState(65)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -760,7 +814,7 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(59)
+				p.SetState(62)
 				p.Match(MarkdownParserNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -769,13 +823,109 @@ func (p *MarkdownParser) Line() (localctx ILineContext) {
 			}
 
 		}
-		p.SetState(64)
+		p.SetState(67)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
 		}
 		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 4, p.GetParserRuleContext())
 		if p.HasError() {
+			goto errorExit
+		}
+	}
+
+errorExit:
+	if p.HasError() {
+		v := p.GetError()
+		localctx.SetException(v)
+		p.GetErrorHandler().ReportError(p, v)
+		p.GetErrorHandler().Recover(p, v)
+		p.SetError(nil)
+	}
+	p.ExitRule()
+	return localctx
+	goto errorExit // Trick to prevent compiler error if the label is not used
+}
+
+// ILinebreakContext is an interface to support dynamic dispatch.
+type ILinebreakContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// Getter signatures
+	LINE_BREAK() antlr.TerminalNode
+
+	// IsLinebreakContext differentiates from other interfaces.
+	IsLinebreakContext()
+}
+
+type LinebreakContext struct {
+	antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyLinebreakContext() *LinebreakContext {
+	var p = new(LinebreakContext)
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = MarkdownParserRULE_linebreak
+	return p
+}
+
+func InitEmptyLinebreakContext(p *LinebreakContext) {
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = MarkdownParserRULE_linebreak
+}
+
+func (*LinebreakContext) IsLinebreakContext() {}
+
+func NewLinebreakContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LinebreakContext {
+	var p = new(LinebreakContext)
+
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = MarkdownParserRULE_linebreak
+
+	return p
+}
+
+func (s *LinebreakContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *LinebreakContext) LINE_BREAK() antlr.TerminalNode {
+	return s.GetToken(MarkdownParserLINE_BREAK, 0)
+}
+
+func (s *LinebreakContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *LinebreakContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *LinebreakContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(MarkdownParserListener); ok {
+		listenerT.EnterLinebreak(s)
+	}
+}
+
+func (s *LinebreakContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(MarkdownParserListener); ok {
+		listenerT.ExitLinebreak(s)
+	}
+}
+
+func (p *MarkdownParser) Linebreak() (localctx ILinebreakContext) {
+	localctx = NewLinebreakContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 6, MarkdownParserRULE_linebreak)
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(68)
+		p.Match(MarkdownParserLINE_BREAK)
+		if p.HasError() {
+			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
@@ -928,8 +1078,8 @@ func (s *InlineContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) Inline() (localctx IInlineContext) {
 	localctx = NewInlineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, MarkdownParserRULE_inline)
-	p.SetState(69)
+	p.EnterRule(localctx, 8, MarkdownParserRULE_inline)
+	p.SetState(74)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -939,28 +1089,28 @@ func (p *MarkdownParser) Inline() (localctx IInlineContext) {
 	case MarkdownParserITALIC_MARKER:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(65)
+			p.SetState(70)
 			p.Italic()
 		}
 
 	case MarkdownParserBOLD_MARKER:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(66)
+			p.SetState(71)
 			p.Bold()
 		}
 
 	case MarkdownParserBOLD_AND_ITALIC_MARKER:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(67)
+			p.SetState(72)
 			p.Bold_and_italic()
 		}
 
 	case MarkdownParserCODE_MARKER:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(68)
+			p.SetState(73)
 			p.Code()
 		}
 
@@ -1087,10 +1237,10 @@ func (s *ItalicContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) Italic() (localctx IItalicContext) {
 	localctx = NewItalicContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, MarkdownParserRULE_italic)
+	p.EnterRule(localctx, 10, MarkdownParserRULE_italic)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(71)
+		p.SetState(76)
 		p.Match(MarkdownParserITALIC_MARKER)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -1098,14 +1248,14 @@ func (p *MarkdownParser) Italic() (localctx IItalicContext) {
 		}
 	}
 	{
-		p.SetState(72)
+		p.SetState(77)
 
 		var _x = p.Italic_line()
 
 		localctx.(*ItalicContext).data = _x
 	}
 	{
-		p.SetState(73)
+		p.SetState(78)
 		p.Match(MarkdownParserITALIC_MARKER)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -1256,21 +1406,21 @@ func (s *Italic_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) Italic_line() (localctx IItalic_lineContext) {
 	localctx = NewItalic_lineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, MarkdownParserRULE_italic_line)
+	p.EnterRule(localctx, 12, MarkdownParserRULE_italic_line)
 	var _la int
 
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(81)
+	p.SetState(86)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = ((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&69634) != 0) {
-		p.SetState(81)
+	for ok := true; ok; ok = ((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&139266) != 0) {
+		p.SetState(86)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -1278,7 +1428,7 @@ func (p *MarkdownParser) Italic_line() (localctx IItalic_lineContext) {
 
 		switch p.GetTokenStream().LA(1) {
 		case MarkdownParserWHITESPACE, MarkdownParserWORD:
-			p.SetState(76)
+			p.SetState(81)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -1288,7 +1438,7 @@ func (p *MarkdownParser) Italic_line() (localctx IItalic_lineContext) {
 				switch _alt {
 				case 1:
 					{
-						p.SetState(75)
+						p.SetState(80)
 						_la = p.GetTokenStream().LA(1)
 
 						if !(_la == MarkdownParserWHITESPACE || _la == MarkdownParserWORD) {
@@ -1304,7 +1454,7 @@ func (p *MarkdownParser) Italic_line() (localctx IItalic_lineContext) {
 					goto errorExit
 				}
 
-				p.SetState(78)
+				p.SetState(83)
 				p.GetErrorHandler().Sync(p)
 				_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 6, p.GetParserRuleContext())
 				if p.HasError() {
@@ -1314,7 +1464,7 @@ func (p *MarkdownParser) Italic_line() (localctx IItalic_lineContext) {
 
 		case MarkdownParserBOLD_MARKER:
 			{
-				p.SetState(80)
+				p.SetState(85)
 				p.Bold()
 			}
 
@@ -1323,7 +1473,7 @@ func (p *MarkdownParser) Italic_line() (localctx IItalic_lineContext) {
 			goto errorExit
 		}
 
-		p.SetState(83)
+		p.SetState(88)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -1449,10 +1599,10 @@ func (s *BoldContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) Bold() (localctx IBoldContext) {
 	localctx = NewBoldContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, MarkdownParserRULE_bold)
+	p.EnterRule(localctx, 14, MarkdownParserRULE_bold)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(85)
+		p.SetState(90)
 		p.Match(MarkdownParserBOLD_MARKER)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -1460,14 +1610,14 @@ func (p *MarkdownParser) Bold() (localctx IBoldContext) {
 		}
 	}
 	{
-		p.SetState(86)
+		p.SetState(91)
 
 		var _x = p.Bold_line()
 
 		localctx.(*BoldContext).data = _x
 	}
 	{
-		p.SetState(87)
+		p.SetState(92)
 		p.Match(MarkdownParserBOLD_MARKER)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -1618,21 +1768,21 @@ func (s *Bold_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) Bold_line() (localctx IBold_lineContext) {
 	localctx = NewBold_lineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, MarkdownParserRULE_bold_line)
+	p.EnterRule(localctx, 16, MarkdownParserRULE_bold_line)
 	var _la int
 
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(95)
+	p.SetState(100)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = ((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&67586) != 0) {
-		p.SetState(95)
+	for ok := true; ok; ok = ((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&135170) != 0) {
+		p.SetState(100)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -1640,7 +1790,7 @@ func (p *MarkdownParser) Bold_line() (localctx IBold_lineContext) {
 
 		switch p.GetTokenStream().LA(1) {
 		case MarkdownParserWHITESPACE, MarkdownParserWORD:
-			p.SetState(90)
+			p.SetState(95)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -1650,7 +1800,7 @@ func (p *MarkdownParser) Bold_line() (localctx IBold_lineContext) {
 				switch _alt {
 				case 1:
 					{
-						p.SetState(89)
+						p.SetState(94)
 						_la = p.GetTokenStream().LA(1)
 
 						if !(_la == MarkdownParserWHITESPACE || _la == MarkdownParserWORD) {
@@ -1666,7 +1816,7 @@ func (p *MarkdownParser) Bold_line() (localctx IBold_lineContext) {
 					goto errorExit
 				}
 
-				p.SetState(92)
+				p.SetState(97)
 				p.GetErrorHandler().Sync(p)
 				_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 9, p.GetParserRuleContext())
 				if p.HasError() {
@@ -1676,7 +1826,7 @@ func (p *MarkdownParser) Bold_line() (localctx IBold_lineContext) {
 
 		case MarkdownParserITALIC_MARKER:
 			{
-				p.SetState(94)
+				p.SetState(99)
 				p.Italic()
 			}
 
@@ -1685,7 +1835,7 @@ func (p *MarkdownParser) Bold_line() (localctx IBold_lineContext) {
 			goto errorExit
 		}
 
-		p.SetState(97)
+		p.SetState(102)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -1811,10 +1961,10 @@ func (s *Bold_and_italicContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) Bold_and_italic() (localctx IBold_and_italicContext) {
 	localctx = NewBold_and_italicContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, MarkdownParserRULE_bold_and_italic)
+	p.EnterRule(localctx, 18, MarkdownParserRULE_bold_and_italic)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(99)
+		p.SetState(104)
 		p.Match(MarkdownParserBOLD_AND_ITALIC_MARKER)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -1822,14 +1972,14 @@ func (p *MarkdownParser) Bold_and_italic() (localctx IBold_and_italicContext) {
 		}
 	}
 	{
-		p.SetState(100)
+		p.SetState(105)
 
 		var _x = p.Bold_line()
 
 		localctx.(*Bold_and_italicContext).data = _x
 	}
 	{
-		p.SetState(101)
+		p.SetState(106)
 		p.Match(MarkdownParserBOLD_AND_ITALIC_MARKER)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -1955,10 +2105,10 @@ func (s *CodeContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) Code() (localctx ICodeContext) {
 	localctx = NewCodeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, MarkdownParserRULE_code)
+	p.EnterRule(localctx, 20, MarkdownParserRULE_code)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(103)
+		p.SetState(108)
 		p.Match(MarkdownParserCODE_MARKER)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -1966,14 +2116,14 @@ func (p *MarkdownParser) Code() (localctx ICodeContext) {
 		}
 	}
 	{
-		p.SetState(104)
+		p.SetState(109)
 
 		var _x = p.Code_text()
 
 		localctx.(*CodeContext).data = _x
 	}
 	{
-		p.SetState(105)
+		p.SetState(110)
 		p.Match(MarkdownParserCODE_MARKER)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2091,23 +2241,23 @@ func (s *Code_textContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) Code_text() (localctx ICode_textContext) {
 	localctx = NewCode_textContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, MarkdownParserRULE_code_text)
+	p.EnterRule(localctx, 22, MarkdownParserRULE_code_text)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(108)
+	p.SetState(113)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = ((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&65546) != 0) {
+	for ok := true; ok; ok = ((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&131082) != 0) {
 		{
-			p.SetState(107)
+			p.SetState(112)
 			_la = p.GetTokenStream().LA(1)
 
-			if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&65546) != 0) {
+			if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&131082) != 0) {
 				p.GetErrorHandler().RecoverInline(p)
 			} else {
 				p.GetErrorHandler().ReportMatch(p)
@@ -2115,7 +2265,7 @@ func (p *MarkdownParser) Code_text() (localctx ICode_textContext) {
 			}
 		}
 
-		p.SetState(110)
+		p.SetState(115)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -2251,12 +2401,12 @@ func (s *H1Context) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) H1() (localctx IH1Context) {
 	localctx = NewH1Context(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, MarkdownParserRULE_h1)
+	p.EnterRule(localctx, 24, MarkdownParserRULE_h1)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(112)
+		p.SetState(117)
 		p.Match(MarkdownParserHASH)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2264,7 +2414,7 @@ func (p *MarkdownParser) H1() (localctx IH1Context) {
 		}
 	}
 	{
-		p.SetState(113)
+		p.SetState(118)
 		p.Match(MarkdownParserWHITESPACE)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2272,13 +2422,13 @@ func (p *MarkdownParser) H1() (localctx IH1Context) {
 		}
 	}
 	{
-		p.SetState(114)
+		p.SetState(119)
 
 		var _x = p.Line()
 
 		localctx.(*H1Context).data = _x
 	}
-	p.SetState(118)
+	p.SetState(123)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -2287,7 +2437,7 @@ func (p *MarkdownParser) H1() (localctx IH1Context) {
 
 	for _la == MarkdownParserNEWLINE {
 		{
-			p.SetState(115)
+			p.SetState(120)
 			p.Match(MarkdownParserNEWLINE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -2295,7 +2445,7 @@ func (p *MarkdownParser) H1() (localctx IH1Context) {
 			}
 		}
 
-		p.SetState(120)
+		p.SetState(125)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -2431,12 +2581,12 @@ func (s *H2Context) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) H2() (localctx IH2Context) {
 	localctx = NewH2Context(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 24, MarkdownParserRULE_h2)
+	p.EnterRule(localctx, 26, MarkdownParserRULE_h2)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(121)
+		p.SetState(126)
 		p.Match(MarkdownParserH2)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2444,7 +2594,7 @@ func (p *MarkdownParser) H2() (localctx IH2Context) {
 		}
 	}
 	{
-		p.SetState(122)
+		p.SetState(127)
 		p.Match(MarkdownParserWHITESPACE)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2452,13 +2602,13 @@ func (p *MarkdownParser) H2() (localctx IH2Context) {
 		}
 	}
 	{
-		p.SetState(123)
+		p.SetState(128)
 
 		var _x = p.Line()
 
 		localctx.(*H2Context).data = _x
 	}
-	p.SetState(127)
+	p.SetState(132)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -2467,7 +2617,7 @@ func (p *MarkdownParser) H2() (localctx IH2Context) {
 
 	for _la == MarkdownParserNEWLINE {
 		{
-			p.SetState(124)
+			p.SetState(129)
 			p.Match(MarkdownParserNEWLINE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -2475,7 +2625,7 @@ func (p *MarkdownParser) H2() (localctx IH2Context) {
 			}
 		}
 
-		p.SetState(129)
+		p.SetState(134)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -2611,12 +2761,12 @@ func (s *H3Context) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) H3() (localctx IH3Context) {
 	localctx = NewH3Context(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, MarkdownParserRULE_h3)
+	p.EnterRule(localctx, 28, MarkdownParserRULE_h3)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(130)
+		p.SetState(135)
 		p.Match(MarkdownParserH3)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2624,7 +2774,7 @@ func (p *MarkdownParser) H3() (localctx IH3Context) {
 		}
 	}
 	{
-		p.SetState(131)
+		p.SetState(136)
 		p.Match(MarkdownParserWHITESPACE)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2632,13 +2782,13 @@ func (p *MarkdownParser) H3() (localctx IH3Context) {
 		}
 	}
 	{
-		p.SetState(132)
+		p.SetState(137)
 
 		var _x = p.Line()
 
 		localctx.(*H3Context).data = _x
 	}
-	p.SetState(136)
+	p.SetState(141)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -2647,7 +2797,7 @@ func (p *MarkdownParser) H3() (localctx IH3Context) {
 
 	for _la == MarkdownParserNEWLINE {
 		{
-			p.SetState(133)
+			p.SetState(138)
 			p.Match(MarkdownParserNEWLINE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -2655,7 +2805,7 @@ func (p *MarkdownParser) H3() (localctx IH3Context) {
 			}
 		}
 
-		p.SetState(138)
+		p.SetState(143)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -2791,12 +2941,12 @@ func (s *H4Context) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) H4() (localctx IH4Context) {
 	localctx = NewH4Context(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 28, MarkdownParserRULE_h4)
+	p.EnterRule(localctx, 30, MarkdownParserRULE_h4)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(139)
+		p.SetState(144)
 		p.Match(MarkdownParserH4)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2804,7 +2954,7 @@ func (p *MarkdownParser) H4() (localctx IH4Context) {
 		}
 	}
 	{
-		p.SetState(140)
+		p.SetState(145)
 		p.Match(MarkdownParserWHITESPACE)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2812,13 +2962,13 @@ func (p *MarkdownParser) H4() (localctx IH4Context) {
 		}
 	}
 	{
-		p.SetState(141)
+		p.SetState(146)
 
 		var _x = p.Line()
 
 		localctx.(*H4Context).data = _x
 	}
-	p.SetState(145)
+	p.SetState(150)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -2827,7 +2977,7 @@ func (p *MarkdownParser) H4() (localctx IH4Context) {
 
 	for _la == MarkdownParserNEWLINE {
 		{
-			p.SetState(142)
+			p.SetState(147)
 			p.Match(MarkdownParserNEWLINE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -2835,7 +2985,7 @@ func (p *MarkdownParser) H4() (localctx IH4Context) {
 			}
 		}
 
-		p.SetState(147)
+		p.SetState(152)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -2971,12 +3121,12 @@ func (s *H5Context) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) H5() (localctx IH5Context) {
 	localctx = NewH5Context(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, MarkdownParserRULE_h5)
+	p.EnterRule(localctx, 32, MarkdownParserRULE_h5)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(148)
+		p.SetState(153)
 		p.Match(MarkdownParserH5)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2984,7 +3134,7 @@ func (p *MarkdownParser) H5() (localctx IH5Context) {
 		}
 	}
 	{
-		p.SetState(149)
+		p.SetState(154)
 		p.Match(MarkdownParserWHITESPACE)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -2992,13 +3142,13 @@ func (p *MarkdownParser) H5() (localctx IH5Context) {
 		}
 	}
 	{
-		p.SetState(150)
+		p.SetState(155)
 
 		var _x = p.Line()
 
 		localctx.(*H5Context).data = _x
 	}
-	p.SetState(154)
+	p.SetState(159)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -3007,7 +3157,7 @@ func (p *MarkdownParser) H5() (localctx IH5Context) {
 
 	for _la == MarkdownParserNEWLINE {
 		{
-			p.SetState(151)
+			p.SetState(156)
 			p.Match(MarkdownParserNEWLINE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -3015,7 +3165,7 @@ func (p *MarkdownParser) H5() (localctx IH5Context) {
 			}
 		}
 
-		p.SetState(156)
+		p.SetState(161)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -3151,12 +3301,12 @@ func (s *H6Context) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) H6() (localctx IH6Context) {
 	localctx = NewH6Context(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, MarkdownParserRULE_h6)
+	p.EnterRule(localctx, 34, MarkdownParserRULE_h6)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(157)
+		p.SetState(162)
 		p.Match(MarkdownParserH6)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -3164,7 +3314,7 @@ func (p *MarkdownParser) H6() (localctx IH6Context) {
 		}
 	}
 	{
-		p.SetState(158)
+		p.SetState(163)
 		p.Match(MarkdownParserWHITESPACE)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -3172,13 +3322,13 @@ func (p *MarkdownParser) H6() (localctx IH6Context) {
 		}
 	}
 	{
-		p.SetState(159)
+		p.SetState(164)
 
 		var _x = p.Line()
 
 		localctx.(*H6Context).data = _x
 	}
-	p.SetState(163)
+	p.SetState(168)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -3187,7 +3337,7 @@ func (p *MarkdownParser) H6() (localctx IH6Context) {
 
 	for _la == MarkdownParserNEWLINE {
 		{
-			p.SetState(160)
+			p.SetState(165)
 			p.Match(MarkdownParserNEWLINE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -3195,7 +3345,7 @@ func (p *MarkdownParser) H6() (localctx IH6Context) {
 			}
 		}
 
-		p.SetState(165)
+		p.SetState(170)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -3326,11 +3476,11 @@ func (s *ParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) Paragraph() (localctx IParagraphContext) {
 	localctx = NewParagraphContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 34, MarkdownParserRULE_paragraph)
+	p.EnterRule(localctx, 36, MarkdownParserRULE_paragraph)
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(167)
+	p.SetState(172)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -3340,7 +3490,7 @@ func (p *MarkdownParser) Paragraph() (localctx IParagraphContext) {
 		switch _alt {
 		case 1:
 			{
-				p.SetState(166)
+				p.SetState(171)
 				p.Line()
 			}
 
@@ -3349,7 +3499,7 @@ func (p *MarkdownParser) Paragraph() (localctx IParagraphContext) {
 			goto errorExit
 		}
 
-		p.SetState(169)
+		p.SetState(174)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 19, p.GetParserRuleContext())
 		if p.HasError() {
@@ -3539,8 +3689,8 @@ func (s *HeadingContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *MarkdownParser) Heading() (localctx IHeadingContext) {
 	localctx = NewHeadingContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 36, MarkdownParserRULE_heading)
-	p.SetState(177)
+	p.EnterRule(localctx, 38, MarkdownParserRULE_heading)
+	p.SetState(182)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -3550,42 +3700,42 @@ func (p *MarkdownParser) Heading() (localctx IHeadingContext) {
 	case MarkdownParserHASH:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(171)
+			p.SetState(176)
 			p.H1()
 		}
 
 	case MarkdownParserH2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(172)
+			p.SetState(177)
 			p.H2()
 		}
 
 	case MarkdownParserH3:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(173)
+			p.SetState(178)
 			p.H3()
 		}
 
 	case MarkdownParserH4:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(174)
+			p.SetState(179)
 			p.H4()
 		}
 
 	case MarkdownParserH5:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(175)
+			p.SetState(180)
 			p.H5()
 		}
 
 	case MarkdownParserH6:
 		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(176)
+			p.SetState(181)
 			p.H6()
 		}
 

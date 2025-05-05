@@ -3,6 +3,7 @@ lexer grammar MarkdownLexer;
 WHITESPACE: [ \t]+ ;
 NEWLINE: '\r'? '\n' ;
 ESCAPE_CHAR : '\\' . ;
+LINE_BREAK: WHITESPACE WHITESPACE+ NEWLINE;
 
 // headings
 HASH: '#';

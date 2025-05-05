@@ -1,4 +1,8 @@
-.PHONY: setup test
+.PHONY: setup test debug
+debug:
+	go build -o ./dist/main.out ./cmd/main/.
+	gdb --args ./dist/main.out ./testfiles/test.md 
+
 setup:
 	test -f ./external/antlr.jar || curl https://www.antlr.org/download/antlr-4.13.2-complete.jar -o ./external/antlr.jar
 	go generate ./internal/parser/generate.go
