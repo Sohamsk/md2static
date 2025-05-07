@@ -38,6 +38,12 @@ func (s *BaseMarkdownParserListener) EnterLine(ctx *LineContext) {}
 // ExitLine is called when production line is exited.
 func (s *BaseMarkdownParserListener) ExitLine(ctx *LineContext) {}
 
+// EnterEscape_char is called when production escape_char is entered.
+func (s *BaseMarkdownParserListener) EnterEscape_char(ctx *Escape_charContext) {}
+
+// ExitEscape_char is called when production escape_char is exited.
+func (s *BaseMarkdownParserListener) ExitEscape_char(ctx *Escape_charContext) {}
+
 // EnterLinebreak is called when production linebreak is entered.
 func (s *BaseMarkdownParserListener) EnterLinebreak(ctx *LinebreakContext) {}
 

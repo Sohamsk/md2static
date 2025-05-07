@@ -1,6 +1,8 @@
 package listener
 
 import (
+	"strings"
+
 	"github.com/antlr4-go/antlr/v4"
 	"github.com/sohamsk/md2static/internal/parser"
 )
@@ -25,6 +27,8 @@ func (s *MarkdownListener) EnterParagraph(ctx *parser.ParagraphContext) {
 				}
 			} else if _, ok := grandChild.(*parser.LinebreakContext); ok {
 				content += "<br>"
+			} else if e, ok := grandChild.(*parser.Escape_charContext); ok {
+				content += strings.TrimLeft(e.GetText(), "\\")
 			} else {
 				tn, _ := grandChild.(antlr.TerminalNode)
 				content += tn.GetText()

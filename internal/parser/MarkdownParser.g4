@@ -1,3 +1,4 @@
+
 parser grammar MarkdownParser;
 
 options { tokenVocab=MarkdownLexer; }
@@ -11,8 +12,13 @@ block
     | paragraph
     ;
 
+// TODO: might consider the linebreak to be the end of the line (debatable)
 line
-    : (WORD | WHITESPACE | NUMBER | PUNCTUATION | inline | linebreak)+ NEWLINE*
+    : (WORD | WHITESPACE | NUMBER | PUNCTUATION | escape_char | inline | linebreak)+ NEWLINE*
+    ;
+
+escape_char
+    : ESCAPE_CHAR
     ;
 
 linebreak
@@ -31,7 +37,7 @@ italic
     ;
 
 italic_line
-    : ((WORD | WHITESPACE)+ | bold)+ 
+    : ((WORD | WHITESPACE | ESCAPE_CHAR)+ | bold)+ 
     ;
 
 bold
@@ -39,7 +45,7 @@ bold
     ;
 
 bold_line
-    : ((WORD | WHITESPACE)+ | italic)+
+    : ((WORD | WHITESPACE | ESCAPE_CHAR)+ | italic)+
     ;
 
 bold_and_italic
@@ -85,3 +91,4 @@ paragraph
 heading
     : h1 | h2 | h3 | h4 | h5 | h6
     ;
+
