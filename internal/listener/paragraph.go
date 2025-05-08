@@ -33,8 +33,6 @@ func (s *MarkdownListener) EnterLine(ctx *parser.LineContext) {
 					content += "<code>" + v.GetData().GetText() + "</code>"
 				}
 			}
-		} else if _, ok := grandChild.(*parser.LinebreakContext); ok {
-			content += "<br>"
 		} else if e, ok := grandChild.(*parser.Escape_charContext); ok {
 			content += strings.TrimLeft(e.GetText(), "\\")
 		} else {
@@ -43,4 +41,9 @@ func (s *MarkdownListener) EnterLine(ctx *parser.LineContext) {
 		}
 	}
 	s.writer.WriteString(strings.Trim(content, "\n"))
+}
+
+// EnterLinebreak is called when production linebreak is entered.
+func (s *MarkdownListener) EnterLinebreak(ctx *parser.LinebreakContext) {
+	s.writer.WriteString("<br>")
 }

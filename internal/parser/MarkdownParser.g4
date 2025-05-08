@@ -10,11 +10,12 @@ document
 block
     : heading
     | paragraph
+    | NEWLINE+
+    | LINE_BREAK
     ;
 
-// TODO: might consider the linebreak to be the end of the line (debatable)
 line
-    : (WORD | WHITESPACE | NUMBER | PUNCTUATION | escape_char | inline | linebreak)+ NEWLINE*
+    : (WORD | WHITESPACE | NUMBER | PUNCTUATION | DASHES | EQUALS | escape_char | inline)+
     ;
 
 escape_char
@@ -61,31 +62,33 @@ code_text
     ;
 
 h1
-    : HASH WHITESPACE data=line NEWLINE*
+    : HASH WHITESPACE data=line NEWLINE?
+    | data=line (NEWLINE | LINE_BREAK) EQUALS NEWLINE?
     ;
 
 h2
-    : H2 WHITESPACE data=line NEWLINE*
+    : H2 WHITESPACE data=line NEWLINE?
+    | data=line (NEWLINE | LINE_BREAK) DASHES NEWLINE?
     ;
 
 h3
-    : H3 WHITESPACE data=line NEWLINE*
+    : H3 WHITESPACE data=line NEWLINE?
     ;
 
 h4
-    : H4 WHITESPACE data=line NEWLINE*
+    : H4 WHITESPACE data=line NEWLINE?
     ;
 
 h5
-    : H5 WHITESPACE data=line NEWLINE*
+    : H5 WHITESPACE data=line NEWLINE?
     ;
 
 h6
-    : H6 WHITESPACE data=line NEWLINE*
+    : H6 WHITESPACE data=line NEWLINE?
     ;
 
 paragraph
-    : line+
+    : (line (linebreak | NEWLINE?))+
     ;
 
 heading
