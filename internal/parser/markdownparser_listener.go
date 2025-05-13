@@ -13,6 +13,9 @@ type MarkdownParserListener interface {
 	// EnterBlock is called when entering the block production.
 	EnterBlock(c *BlockContext)
 
+	// EnterParagraph is called when entering the paragraph production.
+	EnterParagraph(c *ParagraphContext)
+
 	// EnterLine is called when entering the line production.
 	EnterLine(c *LineContext)
 
@@ -64,17 +67,29 @@ type MarkdownParserListener interface {
 	// EnterH6 is called when entering the h6 production.
 	EnterH6(c *H6Context)
 
-	// EnterParagraph is called when entering the paragraph production.
-	EnterParagraph(c *ParagraphContext)
-
 	// EnterHeading is called when entering the heading production.
 	EnterHeading(c *HeadingContext)
+
+	// EnterUnorderedList is called when entering the unorderedList production.
+	EnterUnorderedList(c *UnorderedListContext)
+
+	// EnterUnorderedListItem is called when entering the unorderedListItem production.
+	EnterUnorderedListItem(c *UnorderedListItemContext)
+
+	// EnterListMarker is called when entering the listMarker production.
+	EnterListMarker(c *ListMarkerContext)
+
+	// EnterContinuationLine is called when entering the continuationLine production.
+	EnterContinuationLine(c *ContinuationLineContext)
 
 	// ExitDocument is called when exiting the document production.
 	ExitDocument(c *DocumentContext)
 
 	// ExitBlock is called when exiting the block production.
 	ExitBlock(c *BlockContext)
+
+	// ExitParagraph is called when exiting the paragraph production.
+	ExitParagraph(c *ParagraphContext)
 
 	// ExitLine is called when exiting the line production.
 	ExitLine(c *LineContext)
@@ -127,9 +142,18 @@ type MarkdownParserListener interface {
 	// ExitH6 is called when exiting the h6 production.
 	ExitH6(c *H6Context)
 
-	// ExitParagraph is called when exiting the paragraph production.
-	ExitParagraph(c *ParagraphContext)
-
 	// ExitHeading is called when exiting the heading production.
 	ExitHeading(c *HeadingContext)
+
+	// ExitUnorderedList is called when exiting the unorderedList production.
+	ExitUnorderedList(c *UnorderedListContext)
+
+	// ExitUnorderedListItem is called when exiting the unorderedListItem production.
+	ExitUnorderedListItem(c *UnorderedListItemContext)
+
+	// ExitListMarker is called when exiting the listMarker production.
+	ExitListMarker(c *ListMarkerContext)
+
+	// ExitContinuationLine is called when exiting the continuationLine production.
+	ExitContinuationLine(c *ContinuationLineContext)
 }

@@ -10,8 +10,14 @@ document
 block
     : heading
     | paragraph
+    | unorderedList
     | NEWLINE+
-    | LINE_BREAK
+    ;
+
+// paragraph and co.
+paragraph
+    : (line (linebreak | NEWLINE?))+
+    | linebreak
     ;
 
 line
@@ -34,7 +40,7 @@ inline
     ;
 
 italic
-    : ITALIC_MARKER data=italic_line ITALIC_MARKER
+    : ASTERISK data=italic_line ASTERISK
     ;
 
 italic_line
@@ -61,13 +67,14 @@ code_text
     : (WORD | WHITESPACE | ESCAPE_CHAR)+
     ;
 
+// headings and co.
 h1
-    : HASH WHITESPACE data=line NEWLINE?
+    : HASH WHITESPACE data=line (NEWLINE? | LINE_BREAK)
     | data=line (NEWLINE | LINE_BREAK) EQUALS NEWLINE?
     ;
 
 h2
-    : H2 WHITESPACE data=line NEWLINE?
+    : H2 WHITESPACE data=line (NEWLINE? | LINE_BREAK)
     | data=line (NEWLINE | LINE_BREAK) DASHES NEWLINE?
     ;
 
@@ -87,11 +94,25 @@ h6
     : H6 WHITESPACE data=line NEWLINE?
     ;
 
-paragraph
-    : (line (linebreak | NEWLINE?))+
-    ;
 
 heading
     : h1 | h2 | h3 | h4 | h5 | h6
+    ;
+
+// unorderedlist and co.
+unorderedList
+    : unorderedListItem+
+    ;
+
+unorderedListItem
+    : listMarker line (NEWLINE continuationLine)* NEWLINE?
+    ;
+
+listMarker
+    : (DASH | ASTERISK | PLUS) WHITESPACE
+    ;
+
+continuationLine
+    : WHITESPACE line
     ;
 

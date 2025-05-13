@@ -32,6 +32,12 @@ func (s *BaseMarkdownParserListener) EnterBlock(ctx *BlockContext) {}
 // ExitBlock is called when production block is exited.
 func (s *BaseMarkdownParserListener) ExitBlock(ctx *BlockContext) {}
 
+// EnterParagraph is called when production paragraph is entered.
+func (s *BaseMarkdownParserListener) EnterParagraph(ctx *ParagraphContext) {}
+
+// ExitParagraph is called when production paragraph is exited.
+func (s *BaseMarkdownParserListener) ExitParagraph(ctx *ParagraphContext) {}
+
 // EnterLine is called when production line is entered.
 func (s *BaseMarkdownParserListener) EnterLine(ctx *LineContext) {}
 
@@ -134,14 +140,32 @@ func (s *BaseMarkdownParserListener) EnterH6(ctx *H6Context) {}
 // ExitH6 is called when production h6 is exited.
 func (s *BaseMarkdownParserListener) ExitH6(ctx *H6Context) {}
 
-// EnterParagraph is called when production paragraph is entered.
-func (s *BaseMarkdownParserListener) EnterParagraph(ctx *ParagraphContext) {}
-
-// ExitParagraph is called when production paragraph is exited.
-func (s *BaseMarkdownParserListener) ExitParagraph(ctx *ParagraphContext) {}
-
 // EnterHeading is called when production heading is entered.
 func (s *BaseMarkdownParserListener) EnterHeading(ctx *HeadingContext) {}
 
 // ExitHeading is called when production heading is exited.
 func (s *BaseMarkdownParserListener) ExitHeading(ctx *HeadingContext) {}
+
+// EnterUnorderedList is called when production unorderedList is entered.
+func (s *BaseMarkdownParserListener) EnterUnorderedList(ctx *UnorderedListContext) {}
+
+// ExitUnorderedList is called when production unorderedList is exited.
+func (s *BaseMarkdownParserListener) ExitUnorderedList(ctx *UnorderedListContext) {}
+
+// EnterUnorderedListItem is called when production unorderedListItem is entered.
+func (s *BaseMarkdownParserListener) EnterUnorderedListItem(ctx *UnorderedListItemContext) {}
+
+// ExitUnorderedListItem is called when production unorderedListItem is exited.
+func (s *BaseMarkdownParserListener) ExitUnorderedListItem(ctx *UnorderedListItemContext) {}
+
+// EnterListMarker is called when production listMarker is entered.
+func (s *BaseMarkdownParserListener) EnterListMarker(ctx *ListMarkerContext) {}
+
+// ExitListMarker is called when production listMarker is exited.
+func (s *BaseMarkdownParserListener) ExitListMarker(ctx *ListMarkerContext) {}
+
+// EnterContinuationLine is called when production continuationLine is entered.
+func (s *BaseMarkdownParserListener) EnterContinuationLine(ctx *ContinuationLineContext) {}
+
+// ExitContinuationLine is called when production continuationLine is exited.
+func (s *BaseMarkdownParserListener) ExitContinuationLine(ctx *ContinuationLineContext) {}

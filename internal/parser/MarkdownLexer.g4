@@ -13,13 +13,17 @@ H4: HASH HASH HASH HASH;
 H5: HASH HASH HASH HASH HASH;
 H6: HASH HASH HASH HASH HASH HASH;
 
+DASH: '-';
+ASTERISK: '*';
+PLUS: '+';
+
+
 // setex
 DASHES: '-'+;
 EQUALS: '='+;
 
 // inlines
 BOLD_AND_ITALIC_MARKER: '***';
-ITALIC_MARKER: '*';
 BOLD_MARKER: '**';
 CODE_MARKER: '`';
 
