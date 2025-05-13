@@ -101,15 +101,33 @@ heading
 
 // unorderedlist and co.
 unorderedList
-    : unorderedListItem+
+    : dashList 
+    | asteriskList
+    | plusList
     ;
 
-unorderedListItem
-    : listMarker line (NEWLINE continuationLine)* NEWLINE?
+dashList
+    : dashListItem+
     ;
 
-listMarker
-    : (DASH | ASTERISK | PLUS) WHITESPACE
+asteriskList
+    : asteriskListItem+
+    ;
+
+plusList
+    : plusListItem+
+    ;
+
+dashListItem
+    : DASH WHITESPACE line (NEWLINE continuationLine)* NEWLINE?
+    ;
+
+asteriskListItem
+    : ASTERISK WHITESPACE line (NEWLINE continuationLine)* NEWLINE?
+    ;
+
+plusListItem
+    : PLUS WHITESPACE line (NEWLINE continuationLine)* NEWLINE?
     ;
 
 continuationLine

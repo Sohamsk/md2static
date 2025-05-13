@@ -152,17 +152,41 @@ func (s *BaseMarkdownParserListener) EnterUnorderedList(ctx *UnorderedListContex
 // ExitUnorderedList is called when production unorderedList is exited.
 func (s *BaseMarkdownParserListener) ExitUnorderedList(ctx *UnorderedListContext) {}
 
-// EnterUnorderedListItem is called when production unorderedListItem is entered.
-func (s *BaseMarkdownParserListener) EnterUnorderedListItem(ctx *UnorderedListItemContext) {}
+// EnterDashList is called when production dashList is entered.
+func (s *BaseMarkdownParserListener) EnterDashList(ctx *DashListContext) {}
 
-// ExitUnorderedListItem is called when production unorderedListItem is exited.
-func (s *BaseMarkdownParserListener) ExitUnorderedListItem(ctx *UnorderedListItemContext) {}
+// ExitDashList is called when production dashList is exited.
+func (s *BaseMarkdownParserListener) ExitDashList(ctx *DashListContext) {}
 
-// EnterListMarker is called when production listMarker is entered.
-func (s *BaseMarkdownParserListener) EnterListMarker(ctx *ListMarkerContext) {}
+// EnterAsteriskList is called when production asteriskList is entered.
+func (s *BaseMarkdownParserListener) EnterAsteriskList(ctx *AsteriskListContext) {}
 
-// ExitListMarker is called when production listMarker is exited.
-func (s *BaseMarkdownParserListener) ExitListMarker(ctx *ListMarkerContext) {}
+// ExitAsteriskList is called when production asteriskList is exited.
+func (s *BaseMarkdownParserListener) ExitAsteriskList(ctx *AsteriskListContext) {}
+
+// EnterPlusList is called when production plusList is entered.
+func (s *BaseMarkdownParserListener) EnterPlusList(ctx *PlusListContext) {}
+
+// ExitPlusList is called when production plusList is exited.
+func (s *BaseMarkdownParserListener) ExitPlusList(ctx *PlusListContext) {}
+
+// EnterDashListItem is called when production dashListItem is entered.
+func (s *BaseMarkdownParserListener) EnterDashListItem(ctx *DashListItemContext) {}
+
+// ExitDashListItem is called when production dashListItem is exited.
+func (s *BaseMarkdownParserListener) ExitDashListItem(ctx *DashListItemContext) {}
+
+// EnterAsteriskListItem is called when production asteriskListItem is entered.
+func (s *BaseMarkdownParserListener) EnterAsteriskListItem(ctx *AsteriskListItemContext) {}
+
+// ExitAsteriskListItem is called when production asteriskListItem is exited.
+func (s *BaseMarkdownParserListener) ExitAsteriskListItem(ctx *AsteriskListItemContext) {}
+
+// EnterPlusListItem is called when production plusListItem is entered.
+func (s *BaseMarkdownParserListener) EnterPlusListItem(ctx *PlusListItemContext) {}
+
+// ExitPlusListItem is called when production plusListItem is exited.
+func (s *BaseMarkdownParserListener) ExitPlusListItem(ctx *PlusListItemContext) {}
 
 // EnterContinuationLine is called when production continuationLine is entered.
 func (s *BaseMarkdownParserListener) EnterContinuationLine(ctx *ContinuationLineContext) {}

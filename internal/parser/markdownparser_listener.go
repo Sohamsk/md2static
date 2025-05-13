@@ -73,11 +73,23 @@ type MarkdownParserListener interface {
 	// EnterUnorderedList is called when entering the unorderedList production.
 	EnterUnorderedList(c *UnorderedListContext)
 
-	// EnterUnorderedListItem is called when entering the unorderedListItem production.
-	EnterUnorderedListItem(c *UnorderedListItemContext)
+	// EnterDashList is called when entering the dashList production.
+	EnterDashList(c *DashListContext)
 
-	// EnterListMarker is called when entering the listMarker production.
-	EnterListMarker(c *ListMarkerContext)
+	// EnterAsteriskList is called when entering the asteriskList production.
+	EnterAsteriskList(c *AsteriskListContext)
+
+	// EnterPlusList is called when entering the plusList production.
+	EnterPlusList(c *PlusListContext)
+
+	// EnterDashListItem is called when entering the dashListItem production.
+	EnterDashListItem(c *DashListItemContext)
+
+	// EnterAsteriskListItem is called when entering the asteriskListItem production.
+	EnterAsteriskListItem(c *AsteriskListItemContext)
+
+	// EnterPlusListItem is called when entering the plusListItem production.
+	EnterPlusListItem(c *PlusListItemContext)
 
 	// EnterContinuationLine is called when entering the continuationLine production.
 	EnterContinuationLine(c *ContinuationLineContext)
@@ -148,11 +160,23 @@ type MarkdownParserListener interface {
 	// ExitUnorderedList is called when exiting the unorderedList production.
 	ExitUnorderedList(c *UnorderedListContext)
 
-	// ExitUnorderedListItem is called when exiting the unorderedListItem production.
-	ExitUnorderedListItem(c *UnorderedListItemContext)
+	// ExitDashList is called when exiting the dashList production.
+	ExitDashList(c *DashListContext)
 
-	// ExitListMarker is called when exiting the listMarker production.
-	ExitListMarker(c *ListMarkerContext)
+	// ExitAsteriskList is called when exiting the asteriskList production.
+	ExitAsteriskList(c *AsteriskListContext)
+
+	// ExitPlusList is called when exiting the plusList production.
+	ExitPlusList(c *PlusListContext)
+
+	// ExitDashListItem is called when exiting the dashListItem production.
+	ExitDashListItem(c *DashListItemContext)
+
+	// ExitAsteriskListItem is called when exiting the asteriskListItem production.
+	ExitAsteriskListItem(c *AsteriskListItemContext)
+
+	// ExitPlusListItem is called when exiting the plusListItem production.
+	ExitPlusListItem(c *PlusListItemContext)
 
 	// ExitContinuationLine is called when exiting the continuationLine production.
 	ExitContinuationLine(c *ContinuationLineContext)
